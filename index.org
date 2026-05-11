@@ -851,7 +851,7 @@ AI 會加入一點隨機性（叫做「溫度參數」），讓回答更多樣�
 |------------------------------------------------------------+---------------------------------------------------|
 | [[file:馬祖小論文.skill/SKILL.md][馬祖小論文.skill ／ SKILL.md]] | Skill 包——下次說一句就跑完整套流程            |
 | [[file:學生考卷-正解.xlsx][學生考卷-正解.xlsx]]             | Gemini CLI demo 對照組                            |
-| 學生考卷／資料夾                                            | 29 份 demo PDF（[[https://github.com/letranger/2026-05-14-matsu-ai-workshop/tree/main/學生考卷][於 repo 內逐份下載]]）|
+| [[file:學生考卷.zip][學生考卷.zip]]                           | 29 份 demo PDF 打包下載（5.9 MB，UTF-8 旗標，Windows 預設解壓正常）|
 
 ** 原理段用
 
