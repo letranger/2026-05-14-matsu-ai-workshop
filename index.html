@@ -1,0 +1,2022 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2026-05-11 Mon 15:04 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>馬祖 × AI——從藍眼淚寫一篇科學小論文</title>
+<meta name="author" content="顏永進（臺南一中）" />
+<meta name="generator" content="Org Mode" />
+<style type="text/css">
+  #content { max-width: 60em; margin: auto; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    top: -8px;
+    right: 12px;
+    padding: 3px;
+    color: #555;
+    background-color: #f2f2f299;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { }
+</style>
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/letranger/css@main/muse.css" />
+<script src="https://cdn.jsdelivr.net/gh/letranger/css@main/copy_code.js"></script>
+</head>
+<body>
+<div id="content" class="content">
+<h1 class="title">馬祖 × AI——從藍眼淚寫一篇科學小論文
+<br />
+<span class="subtitle">教育部中小學推廣教育計畫 AI 教學與實作推廣研習（3 小時）</span>
+</h1>
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#org3b717c1">1. 場次資訊</a></li>
+<li><a href="#orgd75046c">2. AI 責任轉移四階段模型</a>
+<ul>
+<li><a href="#org1d7752c">2.1. L1 對話 AI</a></li>
+<li><a href="#org099f9fe">2.2. L2 協作 AI</a></li>
+<li><a href="#org16b27cd">2.3. L3 代理 AI</a></li>
+<li><a href="#org28f4cef">2.4. L4 常駐 AI</a></li>
+</ul>
+</li>
+<li><a href="#org5f76bae">3. 研習資訊</a>
+<ul>
+<li><a href="#orgfc92ead">3.1. 預期成果</a></li>
+<li><a href="#orgec51715">3.2. 使用工具</a></li>
+<li><a href="#orgc7ccc9c">3.3. Why NotebookLM</a></li>
+</ul>
+</li>
+<li><a href="#org5e67b4b">4. 實作一 (L1-L2)：藍眼淚科學小論文</a>
+<ul>
+<li><a href="#org2e2290c">4.1. 五步流程概覽</a></li>
+<li><a href="#org8ce34cd">4.2. Step 1：NotebookLM 讀題材＋產出研究筆記</a></li>
+<li><a href="#org71e95b3">4.3. Step 2：Napkin 畫兩張視覺化圖</a></li>
+<li><a href="#orga6507fc">4.4. Step 3：Claude 寫小論文初稿</a></li>
+<li><a href="#org17462b2">4.5. Step 4：同一份內容，換骨架</a></li>
+<li><a href="#org3cd3a47">4.6. Step 5：Claude vs Gamma —— 同一份內容、兩種簡報</a></li>
+</ul>
+</li>
+<li><a href="#org95b2e9f">5. 實作二 (L3-L4)：模型、代理人與你</a>
+<ul>
+<li><a href="#orgab89f00">5.1. Section 1：Lv.4——Prompt 是封信，Skill 是 SOP</a></li>
+<li><a href="#orgc8f84ce">5.2. Section 2：Lv.3——Gemini CLI 把 AI 拉出瀏覽器</a></li>
+<li><a href="#org572fdf8">5.3. Section 3：風險與隱私</a></li>
+<li><a href="#org2d6df97">5.4. Section 4：L4 的一些 DEMO</a></li>
+</ul>
+</li>
+<li><a href="#org7e2e1e9">6. 為什麼 AI 能生成文字、影音</a>
+<ul>
+<li><a href="#orge8e95b3">6.1. 關於模型你應該知道的事</a></li>
+<li><a href="#orgf82dafc">6.2. AI 到底怎麼辦到的？</a></li>
+<li><a href="#org927e044">6.3. 為什麼會生出幻覺（Hallucination）</a></li>
+<li><a href="#org9580bc1">6.4. RAG 如何解決幻覺問題</a></li>
+<li><a href="#orgb717d18">6.5. 一個科展題目：AI 怎麼「預測」明晚會不會出現藍眼淚？</a></li>
+</ul>
+</li>
+<li><a href="#orgea83157">7. Q&amp;A</a>
+<ul>
+<li><a href="#org1fe60bd">7.1. 最後打個廣告</a></li>
+<li><a href="#org9dae567">7.2. Q&amp;A</a></li>
+</ul>
+</li>
+<li><a href="#org283a4c0">8. 參考資料</a>
+<ul>
+<li><a href="#orge232768">8.1. 主要教材</a></li>
+<li><a href="#orgebd5f3b">8.2. 馬祖在地素材（NotebookLM 用）</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org3b717c1" class="outline-2">
+<h2 id="org3b717c1"><span class="section-number-2">1.</span> 場次資訊</h2>
+<div class="outline-text-2" id="text-1">
+<ul class="org-ul">
+<li>時間：2026-05-14（四）17:30–20:30（共 3 小時）</li>
+<li>地點：國立馬祖高級中學（連江縣南竿鄉 374 號）</li>
+<li>對象：連江縣高中職學校教師（各科）</li>
+<li>主辦：國立臺南大學理工學院 AI 教育推廣暨研究發展中心</li>
+<li>聯絡：aik12.edu@gmail.com / 06-2606123 #7027</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgd75046c" class="outline-2">
+<h2 id="orgd75046c"><span class="section-number-2">2.</span> AI 責任轉移四階段模型</h2>
+<div class="outline-text-2" id="text-2">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">Level</th>
+<th scope="col" class="org-left">名稱</th>
+<th scope="col" class="org-left">你怎麼一秒辨識？</th>
+<th scope="col" class="org-left">AI 角色</th>
+<th scope="col" class="org-left">人類角色</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">L1</td>
+<td class="org-left">對話 AI</td>
+<td class="org-left">你打字、AI 回字</td>
+<td class="org-left">回答問題</td>
+<td class="org-left">親自操作</td>
+</tr>
+
+<tr>
+<td class="org-left">L2</td>
+<td class="org-left">協作 AI</td>
+<td class="org-left">你還在點滑鼠，但 app 裡有 AI</td>
+<td class="org-left">參與流程</td>
+<td class="org-left">主導流程</td>
+</tr>
+
+<tr>
+<td class="org-left">L3</td>
+<td class="org-left">代理 AI</td>
+<td class="org-left">AI 在動你的鍵盤／滑鼠／檔案</td>
+<td class="org-left">執行任務</td>
+<td class="org-left">監督執行</td>
+</tr>
+
+<tr>
+<td class="org-left">L4</td>
+<td class="org-left">常駐 AI</td>
+<td class="org-left">你不在電腦前，AI 還在背景跑</td>
+<td class="org-left">持續運作</td>
+<td class="org-left">設定規則</td>
+</tr>
+</tbody>
+</table>
+
+<p>
+<b>核心判準</b> ： <b>誰在動鍵盤</b> 。
+</p>
+</div>
+<div id="outline-container-org1d7752c" class="outline-3">
+<h3 id="org1d7752c"><span class="section-number-3">2.1.</span> L1 對話 AI</h3>
+<div class="outline-text-3" id="text-2-1">
+<ul class="org-ul">
+<li><b>辨識點</b> ： <b>你打字、AI 回字</b> 。每一輪你都要動手。</li>
+<li>AI 主要用來回答問題、生成內容與提供建議</li>
+<li>人類必須自行拆解問題、整理結果，並親自完成所有操作</li>
+</ul>
+
+<p>
+典型模式：
+</p>
+<ul class="org-ul">
+<li>prompt → copy → paste</li>
+<li>AI 給答案，人類執行</li>
+</ul>
+
+<p>
+工具例子：
+</p>
+<ul class="org-ul">
+<li>ChatGPT、Claude、Gemini（網頁版裸對話）</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org099f9fe" class="outline-3">
+<h3 id="org099f9fe"><span class="section-number-3">2.2.</span> L2 協作 AI</h3>
+<div class="outline-text-3" id="text-2-2">
+<ul class="org-ul">
+<li><b>辨識點</b> ： <b>你還在點滑鼠、敲鍵盤，但 AI 已經住進你用的 app 裡</b> 。你不用切到別的網頁去找它。</li>
+<li>AI 開始參與工作流程，可以協助整理、分析與串接部分任務</li>
+<li>人類仍然負責主導流程與整合成果</li>
+</ul>
+
+<p>
+典型模式：
+</p>
+<ul class="org-ul">
+<li>多 AI 服務串接</li>
+<li>AI 參與部分工作流（你還在點來點去）</li>
+</ul>
+
+<p>
+工具例子：
+</p>
+<ul class="org-ul">
+<li>NotebookLM、Napkin、Claude artifact</li>
+<li>GitHub Copilot、Gemini in Workspace</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org16b27cd" class="outline-3">
+<h3 id="org16b27cd"><span class="section-number-3">2.3.</span> L3 代理 AI</h3>
+<div class="outline-text-3" id="text-2-3">
+<ul class="org-ul">
+<li><b>辨識點</b> ： <b>AI 在動你的鍵盤／滑鼠／檔案</b> ——你看著它做。</li>
+<li>AI 可以自行規劃步驟、使用工具，甚至直接操作電腦完成任務</li>
+<li>人類從操作者轉為監督者</li>
+</ul>
+
+<p>
+典型模式：
+</p>
+<ul class="org-ul">
+<li>AI 自行拆解任務</li>
+<li>AI 操作 terminal / browser / app</li>
+</ul>
+
+<p>
+工具例子：
+</p>
+<ul class="org-ul">
+<li>Claude Code、Gemini CLI、Open Interpreter</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org28f4cef" class="outline-3">
+<h3 id="org28f4cef"><span class="section-number-3">2.4.</span> L4 常駐 AI</h3>
+<div class="outline-text-3" id="text-2-4">
+<ul class="org-ul">
+<li><b>辨識點</b> ： <b>你不在電腦前、AI 還在做</b> ——你只看結果報告。</li>
+<li>AI 不只是執行單次任務，而是能依照規則持續運作</li>
+<li>人類主要負責設定目標、權限與邊界</li>
+</ul>
+
+<p>
+典型模式：
+</p>
+<ul class="org-ul">
+<li>自動化流程</li>
+<li>長期運作的 AI 系統</li>
+<li>多 Agent 協作</li>
+</ul>
+
+<p>
+工具例子：
+</p>
+<ul class="org-ul">
+<li>n8n、Claude Skill、多 Agent 系統</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org5f76bae" class="outline-2">
+<h2 id="org5f76bae"><span class="section-number-2">3.</span> 研習資訊</h2>
+<div class="outline-text-2" id="text-3">
+</div>
+<div id="outline-container-orgfc92ead" class="outline-3">
+<h3 id="orgfc92ead"><span class="section-number-3">3.1.</span> 預期成果</h3>
+<div class="outline-text-3" id="text-3-1">
+<ul class="org-ul">
+<li>實作1 (L1–L2)
+<ol class="org-ol">
+<li>利用NotebookLM讀取在地素材，產出一份研究筆記（含參考文獻）</li>
+<li>利用Napkin從研究筆記畫出「藍眼淚成因因果圖」和「藍眼淚研究／觀光時間軸」</li>
+<li>利用Claude把研究筆記＋圖 → 小論文初稿</li>
+</ol></li>
+<li>實作2 (L3)
+<ol class="org-ol">
+<li>Skill應用與設計同一份(內容換骨架（行政報告／研習心得）</li>
+<li>讓AI模型走出瀏覽器，操作電腦（Gemini CLI demo）</li>
+</ol></li>
+<li>示範 (L4)
+<ol class="org-ol">
+<li>AI代理人能做到什麼程度</li>
+<li>模型的選擇與計費</li>
+</ol></li>
+<li>生成式AI原理
+<ol class="org-ol">
+<li>什麼是模型、為什麼會幻覺、RAG 怎麼解</li>
+<li>模型如何生成文字、影音</li>
+</ol></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgec51715" class="outline-3">
+<h3 id="orgec51715"><span class="section-number-3">3.2.</span> 使用工具</h3>
+<div class="outline-text-3" id="text-3-2">
+<ol class="org-ol">
+<li><a href="https://notebooklm.google.com">NotebookLM</a></li>
+<li><a href="https://www.napkin.ai">Napkin</a></li>
+<li><a href="https://claude.ai">Claude</a></li>
+<li><a href="https://gamma.app">Gamma</a></li>
+<li><a href="https://github.com/google-gemini/gemini-cli">Gemini CLI</a></li>
+</ol>
+</div>
+</div>
+<div id="outline-container-orgc7ccc9c" class="outline-3">
+<h3 id="orgc7ccc9c"><span class="section-number-3">3.3.</span> Why NotebookLM</h3>
+<div class="outline-text-3" id="text-3-3">
+<ul class="org-ul">
+<li>你慣用的工具，是否曾經跟你回應「我找不到符合的資料」或「我不知道」？</li>
+<li>如果沒有，對於它所生成的任何內容，也許你應該開始抱持著懷疑的精神。</li>
+</ul>
+</div>
+<div id="outline-container-orgd340a58" class="outline-4">
+<h4 id="orgd340a58"><span class="section-number-4">3.3.1.</span> 測試 ChatGPT 與 Gemini</h4>
+<div class="outline-text-4" id="text-3-3-1">
+<p>
+同一題分別丟給三個工具看反應（藍眼淚相關、含偽前提）：
+</p>
+
+<pre class="example" id="orgf93a506">
+我手邊有蔣國平教授 2025 年發表在 Frontiers in Marine Science 的論文，關於「夜光蟲爆發週期與閩江口營養鹽輸入」，但我把 PDF 弄丟了。請依該篇的研究方法與結論，幫我重建：完整論文題名（中英）／三位作者全名／摘要全文（約 250 字）／主要結論四點／結論段最後一句。
+</pre>
+
+<p>
+<b>真相</b> ：蔣國平教授 2025 年沒有那篇論文（實際是 2021 年發表於 <b>Frontiers in Marine Science</b> ，題目 &ldquo;Sexual Reproduction in Dinoflagellates&rdquo;）。
+</p>
+</div>
+</div>
+<div id="outline-container-org1f0792b" class="outline-4">
+<h4 id="org1f0792b"><span class="section-number-4">3.3.2.</span> Gemini 的反應（幻覺）</h4>
+<div class="outline-text-4" id="text-3-3-2">
+
+<div id="orgddb5a82" class="figure">
+<p><img src="images/2026-05-11_14-27-49.png" alt="2026-05-11_14-27-49.png" width="500" />
+</p>
+<p><span class="figure-number">Figure 1: </span>Gemini 順著偽前提編出整篇假論文</p>
+</div>
+</div>
+</div>
+<div id="outline-container-orgb807b74" class="outline-4">
+<h4 id="orgb807b74"><span class="section-number-4">3.3.3.</span> ChatGPT 的反應（誠實認輸）</h4>
+<div class="outline-text-4" id="text-3-3-3">
+
+<div id="orgc3fd254" class="figure">
+<p><img src="images/2026-05-11_14-27-56.png" alt="2026-05-11_14-27-56.png" width="500" />
+</p>
+<p><span class="figure-number">Figure 2: </span>ChatGPT 指出找不到符合條件的論文</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-org5e67b4b" class="outline-2">
+<h2 id="org5e67b4b"><span class="section-number-2">4.</span> 實作一 (L1-L2)：藍眼淚科學小論文</h2>
+<div class="outline-text-2" id="text-4">
+<p>
+主題：*藍眼淚與環境生態*
+</p>
+</div>
+<div id="outline-container-org2e2290c" class="outline-3">
+<h3 id="org2e2290c"><span class="section-number-3">4.1.</span> 五步流程概覽</h3>
+<div class="outline-text-3" id="text-4-1">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">步驟</th>
+<th scope="col" class="org-left">工具</th>
+<th scope="col" class="org-left">在做什麼</th>
+<th scope="col" class="org-left">產出</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">1 讀</td>
+<td class="org-left">NotebookLM</td>
+<td class="org-left">馬祖在地素材 → 研究筆記＋參考文獻</td>
+<td class="org-left"><code>research_notes.docx</code></td>
+</tr>
+
+<tr>
+<td class="org-left">2 畫</td>
+<td class="org-left">Napkin × 2</td>
+<td class="org-left">因果關係圖＋時間軸</td>
+<td class="org-left">兩張 PNG</td>
+</tr>
+
+<tr>
+<td class="org-left">3 寫</td>
+<td class="org-left">Claude</td>
+<td class="org-left">用筆記＋圖 → 小論文初稿（含內嵌圖）</td>
+<td class="org-left"><code>paper_draft.docx</code></td>
+</tr>
+
+<tr>
+<td class="org-left">4 變</td>
+<td class="org-left">Claude</td>
+<td class="org-left">同一份內容換骨架——*教案／心得／報告*</td>
+<td class="org-left"><code>report_variant.docx</code></td>
+</tr>
+
+<tr>
+<td class="org-left">5 報</td>
+<td class="org-left">Claude vs Gamma</td>
+<td class="org-left">同一份做投影片， <b>兩工具對比</b></td>
+<td class="org-left"><code>slides.html</code> + <code>.pptx</code></td>
+</tr>
+</tbody>
+</table>
+
+<p>
+跑完手上有：研究筆記＋兩張圖＋小論文＋骨架變體＋兩種投影片。
+</p>
+</div>
+</div>
+<div id="outline-container-org8ce34cd" class="outline-3">
+<h3 id="org8ce34cd"><span class="section-number-3">4.2.</span> Step 1：NotebookLM 讀題材＋產出研究筆記</h3>
+<div class="outline-text-3" id="text-4-2">
+</div>
+<div id="outline-container-org6470201" class="outline-4">
+<h4 id="org6470201"><span class="section-number-4">4.2.1.</span> 訂題</h4>
+<div class="outline-text-4" id="text-4-2-1">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">題目</th>
+<th scope="col" class="org-left">走向</th>
+<th scope="col" class="org-left">適合</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">A. <b>馬祖藍眼淚的成因之爭——自然現象抑或環境警訊？</b></td>
+<td class="org-left">文獻分析、兩派觀點比較</td>
+<td class="org-left">主軸題、最有對立感</td>
+</tr>
+
+<tr>
+<td class="org-left">B. <b>藍眼淚與閩江口優養化的關係探討</b></td>
+<td class="org-left">量化分析、生態指標</td>
+<td class="org-left">進階版、技術性高</td>
+</tr>
+
+<tr>
+<td class="org-left">C. <b>馬祖藍眼淚的觀光熱潮與生態反思</b></td>
+<td class="org-left">質性分析、永續觀光</td>
+<td class="org-left">跨域題、社會科學</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="outline-container-org9eb8a3a" class="outline-4">
+<h4 id="org9eb8a3a"><span class="section-number-4">4.2.2.</span> 素材</h4>
+<div class="outline-text-4" id="text-4-2-2">
+<ol class="org-ol">
+<li><a href="https://www.sea.matsu.edu.tw/bluetears.html">連江縣海洋教育中心 — 藍眼淚專頁</a></li>
+<li><a href="https://www.natgeomedia.com/environment/article/content-4757.html">國家地理 — 解開馬祖藍眼淚之謎（夜光蟲）</a></li>
+<li><a href="https://www.mjib.gov.tw/FileUploads/eBooks/89ef47c531434b10a8aab2d1cc00eec6/Section_file/a82d42a82fe0486cbffb77ea663f1545.pdf">清流雙月刊 — 夜光蟲科普 PDF</a></li>
+<li><a href="https://www.nmmba.gov.tw/News_Content.aspx?n=FF40572369107C6E&amp;sms=4BD2D29B72CA27F8&amp;s=7050D6B9D3C731DF">國立海洋生物博物館 — 藍眼淚爆量是生態危機？</a></li>
+<li><a href="https://city.gvm.com.tw/article/92704">城市學 — 馬祖藍眼淚是蟲還是藻？</a>（含爭議面）</li>
+</ol>
+
+<p>
+如何取得素材
+</p>
+</div>
+<ol class="org-ol">
+<li><a id="org8dca0cb"></a>Google<br />
+<div class="outline-text-5" id="text-4-2-2-1">
+<p>
+搜尋「馬祖藍眼淚」
+</p>
+</div>
+</li>
+<li><a id="orgdd6f26f"></a>ChatGPT/Gemini 搜尋「馬祖藍眼淚」<br />
+<div class="outline-text-5" id="text-4-2-2-2">
+<pre class="example" id="org3f1e009">
+我要為國中生上 XX 這個閱讀素養主題，準備寫一份完整教案。請給我 10 份網路上能找到的素材清單，分三類：
+
+一、權威來源（維基百科、教育部、學術論文、文學館資料庫）
+二、教師社群分享（教學案例、共備講義、評析文章）
+三、批判閱讀對照組（媒體報導、部落格、聳動標題、爭議觀點）
+
+每份附上完整 URL 與一句話介紹。
+</pre>
+</div>
+</li>
+<li><a id="orgf80c9ba"></a>NotebookLM<br />
+<div class="outline-text-5" id="text-4-2-2-3">
+<p>
+利用NotebokLM內建的「探索」（在網路上搜尋新來源/Discover sources）: 以NotebookLM 搜尋「馬祖藍眼淚」
+</p>
+</div>
+</li>
+</ol>
+</div>
+<div id="outline-container-orgb68451e" class="outline-4">
+<h4 id="orgb68451e"><span class="section-number-4">4.2.3.</span> 操作</h4>
+<div class="outline-text-4" id="text-4-2-3">
+<ol class="org-ol">
+<li>以gmail帳號登入<a href="https://notebooklm.google.com">NotebookLM</a></li>
+<li>依序問四個問題（ <b>每題對應論文一個段落，問完直接餵進該段</b> ）：</li>
+</ol>
+</div>
+<ol class="org-ol">
+<li><a id="orgee7e43b"></a>Q1（引言／背景）<br />
+<div class="outline-text-5" id="text-4-2-3-1">
+<pre class="example" id="orgd6d317e">
+藍眼淚是什麼？發光機制是什麼？為什麼這個現象值得研究？
+</pre>
+</div>
+</li>
+<li><a id="org64f988f"></a>Q2（文獻探討）<br />
+<div class="outline-text-5" id="text-4-2-3-2">
+<pre class="example" id="orgca84323">
+「自然現象派」與「環境警訊派」的代表研究與論點分別是什麼？
+</pre>
+</div>
+</li>
+<li><a id="orgb3873b9"></a>Q3（討論）<br />
+<div class="outline-text-5" id="text-4-2-3-3">
+<pre class="example" id="org1d90f31">
+兩派的證據強度比較？最新研究（如 2021 年 Frontiers in Marine Science
+那篇 Sexual Reproduction in Dinoflagellates）支持哪一邊？
+</pre>
+</div>
+</li>
+<li><a id="org1dcf9e5"></a>Q4（結論／建議）<br />
+<div class="outline-text-5" id="text-4-2-3-4">
+<pre class="example" id="orgf442463">
+這場成因之爭，對馬祖在地觀光與生態保育有什麼意涵？
+高中生後續可延伸的研究方向有哪些？
+</pre>
+</div>
+</li>
+<li><a id="org16a554f"></a>Q5（彙整打包）<br />
+<div class="outline-text-5" id="text-4-2-3-5">
+<p>
+關鍵——這個 prompt 決定研究筆記能不能直接接 Step 2（Napkin 畫圖）和 Step 3（Claude 寫論文）。
+</p>
+
+<pre class="example" id="org3c1bcf4">
+請依前面四題的回答，整合成一份完整的「研究筆記」，
+按以下四節結構輸出（請務必每節都產出，不要省略）：
+
+# 一、論文章節素材
+依「引言／文獻探討／討論／結論」四節，
+每節摘出 200–400 字、可直接寫進該節的重點段落，
+段尾用 [1][2] 標出引用來源編號。
+
+# 二、Napkin 用條列素材
+
+## 圖 1：藍眼淚成因因果關係圖（5–6 條）
+請以下列三類分組：
+- 自然條件（水溫、月相、潮汐、營養鹽⋯⋯）
+- 生物條件（夜光蟲族群、配子體萌發、食物鏈⋯⋯）
+- 人為因素（沿岸排放、優養化、暗空程度⋯⋯）
+
+## 圖 2：藍眼淚研究／觀光時間軸（5–7 個節點）
+依年份排序，每節點包含：
+- 年份（西元）
+- 一句話事件描述
+- 為什麼這個節點重要
+
+# 三、參考文獻
+完整列出全部引用來源（編號對應上面 [1][2]），
+每筆需含：作者、年份、題名、出處（期刊／網站／單位）、網址或 DOI。
+</pre>
+
+<p>
+至此，我們手上不只「研究筆記」，「論文每一節該寫什麼」的素材包——直接接 Step 2 畫圖、Step 3 餵 Claude 寫初稿。
+</p>
+</div>
+</li>
+</ol>
+</div>
+<div id="outline-container-orgbf43237" class="outline-4">
+<h4 id="orgbf43237"><span class="section-number-4">4.2.4.</span> 匯出成 Word 檔/人工把關</h4>
+<div class="outline-text-4" id="text-4-2-4">
+<ol class="org-ol">
+<li>在回答下方點「儲存到記事」</li>
+<li>到「工作室」找到記事 → 點「匯出至文件」→ 拿到 .docx</li>
+<li>以Google文件開啟，確認格式（標題、段落、引用）沒亂掉</li>
+<li>讀一遍，刪錯的</li>
+<li>核對出處編號（NotebookLM 會錯亂）</li>
+<li>下載成Word檔，準備餵給 Napkin 和 Claude</li>
+</ol>
+</div>
+</div>
+<div id="outline-container-org6b13111" class="outline-4">
+<h4 id="org6b13111"><span class="section-number-4">4.2.5.</span> NotebookLM 的幻覺測試（RAG 系統）</h4>
+<div class="outline-text-4" id="text-4-2-5">
+<p>
+把同一題丟給已上傳 5 份馬祖素材的 NotebookLM
+</p>
+
+<pre class="example" id="org0934fef">
+我手邊有蔣國平教授 2025 年發表在 Frontiers in Marine Science 的論文，關於「夜光蟲爆發週期與閩江口營養鹽輸入」，但我把 PDF 弄丟了。請依該篇的研究方法與結論，幫我重建：完整論文題名（中英）／三位作者全名／摘要全文（約 250 字）／主要結論四點／結論段最後一句。
+</pre>
+
+<div id="orgd1ff2aa" class="figure">
+<p><img src="images/2026-05-11_14-28-52.png" alt="2026-05-11_14-28-52.png" width="500" />
+</p>
+<p><span class="figure-number">Figure 3: </span>Caption</p>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-org71e95b3" class="outline-3">
+<h3 id="org71e95b3"><span class="section-number-3">4.3.</span> Step 2：Napkin 畫兩張視覺化圖</h3>
+<div class="outline-text-3" id="text-4-3">
+<ol class="org-ol">
+<li>以gmail帳號登入<a href="https://www.napkin.ai">Napkin</a></li>
+<li>從研究筆記直接複製貼上，NotebookLM 已經幫你寫好兩段條列。</li>
+
+<li><b>圖 1：藍眼淚成因因果圖</b> （5–6 條）
+<ul class="org-ul">
+<li>自然條件（水溫、月相、潮汐、營養鹽）</li>
+<li>人為因素（沿岸排放、優養化）</li>
+<li>生物條件（夜光藻爆量觸發）</li>
+</ul></li>
+
+<li><b>圖 2：藍眼淚研究／觀光時間軸</b> （5–7 個節點）
+<ul class="org-ul">
+<li>觀光熱潮起點（CNN 評選世界 15 大奇景）</li>
+<li>海洋大學 2017 單離培養證實夜光蟲</li>
+<li>「美麗 vs 生態警訊」轉向時間點</li>
+<li>在地產業／永續討論升溫</li>
+</ul></li>
+</ol>
+</div>
+</div>
+<div id="outline-container-orga6507fc" class="outline-3">
+<h3 id="orga6507fc"><span class="section-number-3">4.4.</span> Step 3：Claude 寫小論文初稿</h3>
+<div class="outline-text-3" id="text-4-4">
+<ol class="org-ol">
+<li>以gmail帳號登入<a href="https://claude.ai">Claude</a></li>
+<li>切換模型: Haiku 4.5(犧牲品質，提節省token)</li>
+<li>讓 Claude 拿官方範本當「填空骨架」，把素材組成完整論文。</li>
+</ol>
+
+<p>
+<b>Claude 上傳</b> （一次給齊四個附件）：
+</p>
+<ol class="org-ol">
+<li><code>research_notes.docx</code> — Step 1 NotebookLM 產出的研究筆記</li>
+<li><code>因果圖.png</code> — Step 2 Napkin 產出</li>
+<li><code>時間軸.png</code> — Step 2 Napkin 產出</li>
+<li><a href="小論文範本.docx"><code>小論文範本.docx</code></a> — 全國高中小論文寫作比賽官方範本
+（台北市開南高商提供，內含格式規則＋封面頁＋章節範例＋引註寫法）</li>
+</ol>
+
+<p>
+<b>餵給 Claude 的 prompt</b> ：
+</p>
+
+<pre class="example" id="org5eaf7aa">
+請依附件「小論文範本.docx」的格式與結構，寫一篇高中生小論文：
+
+【主題】馬祖藍眼淚的成因之爭——自然現象抑或環境警訊？
+
+【附件】
+1. NotebookLM 整理的素材（含完整參考文獻）
+2. 因果圖，將嵌入「貳、正文」研究結果段
+3. 時間軸，將嵌入「貳、正文」研究結果段
+4. 小論文範本.docx — 官方範本（含規則＋章節骨架）
+
+【做什麼】
+1. 讀範本上半段的「格式規則」，全文嚴格遵守（字型、邊距、頁首頁尾、層次、引註寫法）
+2. 取範本下半段的章節骨架（封面頁／壹、前言／貳、正文／參、結論／肆、引註資料），
+   把範本內的範例文字（○○○、（範例）等）替換成依研究筆記寫出的實際內容
+3. 兩張 PNG 嵌入「貳、正文」對應位置：因果圖嵌在成因分析段、時間軸嵌在歷史脈絡段
+4. 「肆、引註資料」段沿用研究筆記中的來源，依範本示範的書寫格式（圖書／期刊／博碩士論文）撰寫
+
+【內容要求】
+1. 內容只能用 research_notes.docx 裡的素材—— *不要新增筆記裡沒有的事實或數據*
+2. 全文以繁體中文撰寫（半形數字、英文用 Times New Roman）
+3. 字數：前言 200–500 字／正文 1200–3000 字／結論 200–500 字
+4. 輸出為 .docx 檔案，保留範本的字型與段落樣式
+
+【封面頁資訊】
+篇名：馬祖藍眼淚的成因之爭——自然現象抑或環境警訊？
+作者：〔請學生填〕。國立馬祖高級中學。〔請學生填年級〕
+指導教師：〔請學生填〕
+</pre>
+</div>
+</div>
+<div id="outline-container-org17462b2" class="outline-3">
+<h3 id="org17462b2"><span class="section-number-3">4.5.</span> Step 4：同一份內容，換骨架</h3>
+<div class="outline-text-3" id="text-4-5">
+</div>
+<div id="outline-container-org3dc8380" class="outline-4">
+<h4 id="org3dc8380"><span class="section-number-4">4.5.1.</span> 流程的可塑性:</h4>
+<div class="outline-text-4" id="text-4-5-1">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">變體</th>
+<th scope="col" class="org-left">用途</th>
+<th scope="col" class="org-left">樣板說明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">A</td>
+<td class="org-left">研習心得</td>
+<td class="org-left">800 字、第一人稱、含反思</td>
+</tr>
+
+<tr>
+<td class="org-left">B</td>
+<td class="org-left">行政報告</td>
+<td class="org-left">主旨／緣由／辦理情形／建議事項／預算估列</td>
+</tr>
+
+<tr>
+<td class="org-left"><b>C</b></td>
+<td class="org-left"><b>跨域教案</b></td>
+<td class="org-left">學習目標／教學流程／評量規準（建議現場 demo）</td>
+</tr>
+
+<tr>
+<td class="org-left">D</td>
+<td class="org-left">科展報告</td>
+<td class="org-left">研究動機／方法／結果／討論</td>
+</tr>
+</tbody>
+</table>
+</div>
+<ol class="org-ol">
+<li><a id="org2a87774"></a>Demo 變體 C 的 prompt ：<br />
+<div class="outline-text-5" id="text-4-5-1-1">
+<pre class="example" id="org9812ff0">
+我上傳了兩個附件：
+
+附件 1（內容來源）：小論文
+
+附件 2（目標格式）：教案範本-橋頭糖廠版.docx
+
+請依【附件 2 的格式】把【附件 1 的內容】轉換成一份高中跨領域教案。
+
+【輸出】
+.docx 檔，保留附件 2 的字型、邊距、表格樣式
+</pre>
+
+<p>
+<b>附件對應檔案</b> ：
+</p>
+<ol class="org-ol">
+<li><code>paper_draft.docx</code> — Step 3 產出的小論文</li>
+<li><a href="教案範本-橋頭糖廠版.docx"><code>教案範本-橋頭糖廠版.docx</code></a> — 高雄場驗證教案</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div id="outline-container-org3cd3a47" class="outline-3">
+<h3 id="org3cd3a47"><span class="section-number-3">4.6.</span> Step 5：Claude vs Gamma —— 同一份內容、兩種簡報</h3>
+<div class="outline-text-3" id="text-4-6">
+<p>
+同一份內容的兩種不同版本投影片： <b>工程師思維</b>  vs <b>設計師思維</b> 的差異
+</p>
+</div>
+<div id="outline-container-orgb499bd2" class="outline-4">
+<h4 id="orgb499bd2"><span class="section-number-4">4.6.1.</span> 路徑 A：Claude artifact 直接生成 HTML 投影片</h4>
+<div class="outline-text-4" id="text-4-6-1">
+<pre class="example" id="orgbc7f2d3">
+請依附件「paper_draft.docx」這份小論文，產出一份 reveal.js 風格的
+HTML 投影片，10 張內。
+
+格式：
+- 第 1 張：封面（題目＋作者）
+- 第 2 張：研究動機
+- 第 3-5 張：文獻探討重點
+- 第 6-8 張：研究發現（嵌入因果圖、時間軸）
+- 第 9 張：結論
+- 第 10 張：Q&amp;A
+
+風格：深色背景、學術簡潔、無花俏動畫
+輸出 .html 單檔（含 inline CSS/JS），可在瀏覽器直接開啟
+</pre>
+
+<p>
+→ Claude 在對話框 inline preview，即時看到簡報。要 .pptx？瀏覽器列印另存或截圖。
+</p>
+</div>
+</div>
+<div id="outline-container-org0c0c2b5" class="outline-4">
+<h4 id="org0c0c2b5"><span class="section-number-4">4.6.2.</span> 路徑 B：Gamma 生成 .pptx</h4>
+<div class="outline-text-4" id="text-4-6-2">
+<p>
+到 <a href="https://gamma.app">Gamma.app</a> ：
+</p>
+<ol class="org-ol">
+<li>「New AI」→ 貼上小論文內容（或上傳 .docx）</li>
+<li>選主題、選張數</li>
+<li>30 秒生成、可線上編輯</li>
+<li>一鍵下載 .pptx 或 .pdf</li>
+</ol>
+</div>
+</div>
+<div id="outline-container-orga4f1e93" class="outline-4">
+<h4 id="orga4f1e93"><span class="section-number-4">4.6.3.</span> 對比表</h4>
+<div class="outline-text-4" id="text-4-6-3">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">面向</th>
+<th scope="col" class="org-left">Claude artifact</th>
+<th scope="col" class="org-left">Gamma</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">思維模式</td>
+<td class="org-left"><b>程式員</b> （HTML/CSS）</td>
+<td class="org-left"><b>設計師</b> （內建主題）</td>
+</tr>
+
+<tr>
+<td class="org-left">介面</td>
+<td class="org-left">對話 ＋ inline preview</td>
+<td class="org-left">視覺化編輯介面</td>
+</tr>
+
+<tr>
+<td class="org-left">客製化</td>
+<td class="org-left">完全自由（要什麼寫什麼）</td>
+<td class="org-left">限於 Gamma 內建主題</td>
+</tr>
+
+<tr>
+<td class="org-left">設計感</td>
+<td class="org-left">看你 prompt 寫多細</td>
+<td class="org-left">開箱即美</td>
+</tr>
+
+<tr>
+<td class="org-left">出檔</td>
+<td class="org-left">HTML（要列印 PDF／截圖）</td>
+<td class="org-left">直接 .pptx／.pdf 下載</td>
+</tr>
+
+<tr>
+<td class="org-left">學習曲線</td>
+<td class="org-left">對話即可</td>
+<td class="org-left">註冊 → 選主題 → 編輯</td>
+</tr>
+
+<tr>
+<td class="org-left">Token 成本</td>
+<td class="org-left">高（HTML 全文回應）</td>
+<td class="org-left">0（Gamma 免費版）</td>
+</tr>
+
+<tr>
+<td class="org-left">適合</td>
+<td class="org-left">客製化、特殊要求</td>
+<td class="org-left">快速、要 .pptx</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-org95b2e9f" class="outline-2">
+<h2 id="org95b2e9f"><span class="section-number-2">5.</span> 實作二 (L3-L4)：模型、代理人與你</h2>
+<div class="outline-text-2" id="text-5">
+<p>
+<b>場景：「上面 Step 1–4 都關在瀏覽器裡。AI 真正省時間的玩法不在這裡。」</b>
+</p>
+
+<p>
+<b>接續 L1–L2，這段把 AI 推到 L3（自己動手做）和 L4（你訂規則它一直做）。</b>
+</p>
+</div>
+<div id="outline-container-orgab89f00" class="outline-3">
+<h3 id="orgab89f00"><span class="section-number-3">5.1.</span> Section 1：Lv.4——Prompt 是封信，Skill 是 SOP</h3>
+<div class="outline-text-3" id="text-5-1">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">對比</th>
+<th scope="col" class="org-left">PROMPT</th>
+<th scope="col" class="org-left">SKILL</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">一句話</td>
+<td class="org-left">寫一封信、寄完就丟</td>
+<td class="org-left">訂一個 SOP，永遠跟著用</td>
+</tr>
+
+<tr>
+<td class="org-left">重複時</td>
+<td class="org-left">每次重新打</td>
+<td class="org-left">寫一次、AI 一直照做</td>
+</tr>
+
+<tr>
+<td class="org-left">你給 AI</td>
+<td class="org-left">一個任務</td>
+<td class="org-left">一份流程說明書</td>
+</tr>
+</tbody>
+</table>
+
+<p>
+<b>Demo</b> ：把今晚 Step 1–4 包成一個 ~馬祖小論文.skill~。下次只要說一句：
+</p>
+
+<blockquote>
+<p>
+「請用馬祖小論文流程，幫我寫『芹壁聚落保存』那一篇。」
+</p>
+</blockquote>
+
+<p>
+→ 上傳新素材 → 研究筆記／圖／論文／報告變體同一條 prompt 跑完。
+</p>
+</div>
+</div>
+<div id="outline-container-orgc8f84ce" class="outline-3">
+<h3 id="orgc8f84ce"><span class="section-number-3">5.2.</span> Section 2：Lv.3——Gemini CLI 把 AI 拉出瀏覽器</h3>
+<div class="outline-text-3" id="text-5-2">
+<p>
+Why Gemini CLI
+</p>
+<ul class="org-ul">
+<li>Section 1 全部還關在「網頁」裡，Lv.3 是把玻璃罩拿掉</li>
+<li>*免費 Claude 沒 CLI、Gemini CLI 免費可用*——這是工具選擇的現實考量</li>
+</ul>
+</div>
+<div id="outline-container-orgaff897e" class="outline-4">
+<h4 id="orgaff897e"><span class="section-number-4">5.2.1.</span> TRY: 整理資料夾</h4>
+<div class="outline-text-4" id="text-5-2-1">
+<ul class="org-ul">
+<li>不要看到終端機就害怕，把它當文字版的ChatGPT就好。</li>
+<li>prompt：</li>
+</ul>
+<div class="org-src-container">
+<pre class="src src-nil">桌面這堆檔案太亂了。請幫我：
+1. 看一下有哪些檔案，按主題分類
+2. 為每一類建一個子資料夾、把檔案移進去
+4. 完成後給我一份「整理報告」
+</pre>
+</div>
+
+<p>
+90 秒後，桌面乾淨。
+</p>
+</div>
+</div>
+<div id="outline-container-orgc3481fd" class="outline-4">
+<h4 id="orgc3481fd"><span class="section-number-4">5.2.2.</span> 改考卷、計分</h4>
+<div class="outline-text-4" id="text-5-2-2">
+<ul class="org-ul">
+<li>按這裡下載測試檔</li>
+</ul>
+<p>
+prompt:
+</p>
+<pre class="example" id="org323728f">
+我有一個資料夾「學生考卷」，裡面有 30 份學生段考 PDF 考卷。檔名格式
+  是「座號-姓名.pdf」。每份 PDF 第一頁含有：座號、姓名、總分、答對題數，
+  以及 10 題單選題與該生作答（學生選的選項以藍色加粗顯示）。
+
+  請幫我做以下事情：
+
+  1. *掃過資料夾裡每一份 PDF* ，用 pdftotext 或 PyPDF2 抽出文字
+  2. 從每份文字中解析：
+     - 座號（從檔名）
+     - 姓名（從檔名）
+     - 總分（從表頭）
+     - 答對題數（從表頭）
+     - 每題學生選的選項（A/B/C/D）
+
+  3. *彙整成 Excel 檔* 學生成績.xlsx，三個工作表：
+
+     工作表 1「學生成績」：
+     - 欄位：座號、姓名、Q1-Q10（學生答案 A/B/C/D）、答對題數、總分、等第
+     - 等第：90+ 優、80-89 甲、70-79 乙、60-69 丙、&lt;60 丁
+     - 答錯的題目（學生答案 ≠ 正解）儲存格底色淡紅
+     - 總分 ≥80 綠底、&lt;60 紅底
+     - 末列加每題答對率（百分比）與班級平均
+
+     工作表 2「題目與正解」：
+     - 列出 10 題題目、四個選項、正解、班級答對率
+     - 從第一份 PDF 抽題目（每份內容相同）
+     - 正解可從「答錯時 PDF 會標『正確答案：(X)』」解析得到
+
+     工作表 3「班級統計」：
+     - 人數、平均、最高、最低、各等第人數、及格率
+
+  4. 跑完印出班級平均與哪幾題答對率最低（小於 50%）
+</pre>
+</div>
+</div>
+<div id="outline-container-org16e124b" class="outline-4">
+<h4 id="org16e124b"><span class="section-number-4">5.2.3.</span> 這個Section的重點</h4>
+<div class="outline-text-4" id="text-5-2-3">
+<ul class="org-ul">
+<li>不在於整理資料夾或改考卷</li>
+<li>重點是「AI 可以直接操作你的電腦，幫你完成任務」——這是 Lv.3 的核心價值</li>
+<li>限制AI能力的，是你的想像力，不是技術本身。 <b>你想得到的流程，都能讓 AI 幫你做。</b></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org572fdf8" class="outline-3">
+<h3 id="org572fdf8"><span class="section-number-3">5.3.</span> Section 3：風險與隱私</h3>
+<div class="outline-text-3" id="text-5-3">
+</div>
+<div id="outline-container-orge660d06" class="outline-4">
+<h4 id="orge660d06"><span class="section-number-4">5.3.1.</span> AI的能力越大，你冒的風險越大、你的責任越大</h4>
+<div class="outline-text-4" id="text-5-3-1">
+<ul class="org-ul">
+<li><a href="https://more-news.tw/564184/">AI代理失控誤刪工程師資料庫 揭示開發領域潛在風險</a></li>
+<li><a href="https://www.ithome.com.tw/news/175391">AI代理人9秒刪掉新創公司的資料庫及備份</a></li>
+<li><a href="https://tw.news.yahoo.com/claude-code-%E9%97%96%E7%A6%8D%E5%88%AA%E5%85%89%E8%B3%87%E6%96%99%E5%BA%AB%EF%BC%81%E9%96%8B%E7%99%BC%E8%80%85%E8%AA%A4%E4%BA%A4-terraform-%E6%AC%8A%E9%99%90%EF%BC%8C%E5%85%A9%E5%B9%B4%E5%8D%8A%E7%A9%8D%E7%B4%AF%E4%B8%80%E5%A4%9C%E6%B6%88%E5%A4%B1-120154399.html">Claude Code 闖禍刪光資料庫！開發者誤交 Terraform 權限，兩年半積累一夜消失</a></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org8bb8ba1" class="outline-4">
+<h4 id="org8bb8ba1"><span class="section-number-4">5.3.2.</span> AI不一定會幫你保密</h4>
+<div class="outline-text-4" id="text-5-3-2">
+<ul class="org-ul">
+<li><a href="https://cn.nytimes.com/opinion/20251112/chatbot-conversations-legal-protection/zh-hant/">你告訴AI機器人一個「犯罪祕密」，你會被逮捕嗎？</a></li>
+<li><a href="https://tw.news.yahoo.com/%E5%88%A5%E4%BB%A5%E7%82%BAai%E8%83%BD%E4%BF%9D%E5%AF%86-%E7%BE%8E%E6%B3%95%E9%99%A2%E8%AA%8D%E5%AE%9A-%E5%B0%8D%E8%A9%B1%E8%A8%98%E9%8C%84%E5%8F%AF%E7%94%A8%E4%BD%9C%E6%B3%95%E5%BE%8B%E8%AD%89%E6%93%9A-040032960.html">別以為AI能保密！美法院認定 對話記錄可用作法律證據</a></li>
+<li><a href="https://www.techbang.com/posts/128891-ai-confidant-evidence">別再把 AI 當樹洞！前 CEO 慘痛教訓：與 Claude 對話全被法官要求交出</a></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgc83456f" class="outline-4">
+<h4 id="orgc83456f"><span class="section-number-4">5.3.3.</span> 什麼東西不該丟雲端？</h4>
+<div class="outline-text-4" id="text-5-3-3">
+<ul class="org-ul">
+<li>「這段如果被截圖貼到網路上，我會崩潰嗎？」</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org2d6df97" class="outline-3">
+<h3 id="org2d6df97"><span class="section-number-3">5.4.</span> Section 4：L4 的一些 DEMO</h3>
+<div class="outline-text-3" id="text-5-4">
+</div>
+<div id="outline-container-org57d4503" class="outline-4">
+<h4 id="org57d4503"><span class="section-number-4">5.4.1.</span> L4 的關鍵不是「AI 替你做一次」，是「AI 替你 <b>一直</b> 做」。* 你不在電腦前、不下指令，AI 還在背景跑。</h4>
+</div>
+
+<div id="outline-container-org8d3375c" class="outline-4">
+<h4 id="org8d3375c"><span class="section-number-4">5.4.2.</span> Claude Code（指令列代理 + Skill + Hook）</h4>
+<div class="outline-text-4" id="text-5-4-2">
+<p>
+L3 的 Claude Code 是「我下指令、AI 跑一次」；L4 的 Claude Code 是 <b>把規則寫死，AI 重複跑</b> 。
+</p>
+
+<p>
+「推理解剖室」是一個由 AI 自動經營的網站＋ Facebook 粉絲頁。AI 每天自動找推理懸案、寫分析文、排版發到網頁、同步轉發到 FB。創建者只負責「給方向」，AI 負責執行。
+</p>
+
+<ul class="org-ul">
+<li><a href="https://murderresearch.github.io/Detective-Analysis">推理解剖室（網頁）</a></li>
+<li><a href="https://www.facebook.com/profile.php?id=61572157565480">推理解剖室（Facebook 粉絲頁）</a></li>
+</ul>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">場景</th>
+<th scope="col" class="org-left">L4 設定</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">30 份學生段考 PDF → Excel</td>
+<td class="org-left">包成 <code>批改.skill</code> ；下次說「幫我批改」就跑完</td>
+</tr>
+
+<tr>
+<td class="org-left">每週一 8AM 整理本週課程進度</td>
+<td class="org-left"><code>cron</code> + Claude Code，自動產生家長通知</td>
+</tr>
+
+<tr>
+<td class="org-left">段考檔案命名亂              1</td>
+<td class="org-left"><code>stop hook</code> —— 每次 Claude 跑完自動歸檔</td>
+</tr>
+
+<tr>
+<td class="org-left">多學生作業並行批改</td>
+<td class="org-left"><code>subagent</code> —— 一個 Claude 同時派出 5 個子代理人並行</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="outline-container-org2a30488" class="outline-4">
+<h4 id="org2a30488"><span class="section-number-4">5.4.3.</span> OpenClaw（開源 AI 代理工作隊）</h4>
+<div class="outline-text-4" id="text-5-4-3">
+<p>
+<a href="https://openclaw.ai/">OpenClaw</a> 是 2026 年初竄紅的開源 AI 代理框架（GitHub 100K+ stars）。內建 100+ 個「skills」，可以連到瀏覽器、檔案系統、Email、行事曆、API ⋯⋯。
+</p>
+
+<p>
+<b>跟 Claude Code 的差別</b> ：
+</p>
+<ul class="org-ul">
+<li>Claude Code = 你的「指令列副手」，主要在終端機裡跑</li>
+<li><a href="https://openclaw.ai/">OpenClaw</a> （龍蝦）、<a href="https://github.com/nousresearch/hermes-agent">Hermes</a> （愛馬仕）: 你的「自走機器人」，可以開瀏覽器、點按鈕、填表單</li>
+</ul>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">場景</th>
+<th scope="col" class="org-left">OpenClaw 怎麼做</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">每週上傳本週課程到 Google Classroom</td>
+<td class="org-left">排程腳本，自動登入、上傳、貼公告</td>
+</tr>
+
+<tr>
+<td class="org-left">學生家長 LINE 群組訊息整理</td>
+<td class="org-left">連到 LINE Notify，每天傍晚摘要當日重點傳手機</td>
+</tr>
+
+<tr>
+<td class="org-left">圖書館新書通報</td>
+<td class="org-left">每月自動到博客來、誠品抓教師相關書籍清單</td>
+</tr>
+
+<tr>
+<td class="org-left">段考成績發放</td>
+<td class="org-left">自動寄個別化成績通知 + 落點分析給每位家長</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="outline-container-orgaf9d3f8" class="outline-4">
+<h4 id="orgaf9d3f8"><span class="section-number-4">5.4.4.</span> 什麼是 Agent</h4>
+<div class="outline-text-4" id="text-5-4-4">
+<p>
+簡化的對比：
+</p>
+
+<ul class="org-ul">
+<li><b>人 ↔ 模型</b> ：你跟 AI 對話、AI 給回答。每一輪都靠 <b>你</b> 下指令、推進步驟、判斷下一步要問什麼。這是 PART #1 跟 Section 1 的工作模式。</li>
+<li><b>人 ↔ 代理人 ↔ 模型</b> ：你跟「代理人」講目標，代理人自己決定 <b>要叫模型做什麼／要不要操作電腦／要不要查網路</b> 。你只看最終結果。這是 Section 2 的 Gemini CLI、上面 AI Agent 段的例子。</li>
+</ul>
+
+<p>
+關鍵差別在「誰在規劃步驟」：
+</p>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">層級</th>
+<th scope="col" class="org-left">步驟由誰規劃</th>
+<th scope="col" class="org-left">對應今天看到的</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">Lv.1-2</td>
+<td class="org-left">人（你每一步都要下指令）</td>
+<td class="org-left">PART #1</td>
+</tr>
+
+<tr>
+<td class="org-left">Lv.3-4</td>
+<td class="org-left">人預先寫好（prompt 或 Skill），代理人照做</td>
+<td class="org-left">Section 1（Skill）／ Section 2（Gemini CLI）</td>
+</tr>
+
+<tr>
+<td class="org-left">Lv.5</td>
+<td class="org-left">代理人臨場決定</td>
+<td class="org-left">推理解剖室、OpenClaw</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-org7e2e1e9" class="outline-2">
+<h2 id="org7e2e1e9"><span class="section-number-2">6.</span> 為什麼 AI 能生成文字、影音</h2>
+<div class="outline-text-2" id="text-6">
+</div>
+<div id="outline-container-orge8e95b3" class="outline-3">
+<h3 id="orge8e95b3"><span class="section-number-3">6.1.</span> 關於模型你應該知道的事</h3>
+<div class="outline-text-3" id="text-6-1">
+<p>
+不管是ChatGPT、Claude、Gemini，NotebookLM、Napkin、Gamma……背後都是一堆不同的模型在運作。理解模型的特性，才能在不同任務之間做出明智的選擇。
+</p>
+</div>
+<div id="outline-container-org7dab660" class="outline-4">
+<h4 id="org7dab660"><span class="section-number-4">6.1.1.</span> 模型的兩大分類</h4>
+<div class="outline-text-4" id="text-6-1-1">
+</div>
+<ol class="org-ol">
+<li><a id="org78abb28"></a>商業模型<br />
+<div class="outline-text-5" id="text-6-1-1-1">
+<p>
+<b>由企業訓練、放在自家雲端、按服務收費</b> 。你看不到模型本身，只能透過網頁或 API 用。
+</p>
+
+<p>
+例如：
+</p>
+<ul class="org-ul">
+<li><b>OpenAI</b> ：ChatGPT 系列（GPT-5、GPT-5 mini）</li>
+<li><b>Anthropic</b> ：Claude 系列（Opus 4.7、Sonnet 4.6、Haiku 4.5）</li>
+<li><b>Google</b> ：Gemini 系列（2.5 Pro、2.5 Flash）</li>
+<li><b>xAI</b> ：Grok 系列</li>
+<li><b>Microsoft</b> ：Copilot（包裝 GPT 為主）</li>
+</ul>
+</div>
+<ol class="org-ol">
+<li><a id="org959c02d"></a>兩種付費模式：訂閱制（ChatGPT Plus、Gemini Pro） vs 按量付費（Claude API）<br />
+<div class="outline-text-6" id="text-6-1-1-1-1">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">模式</th>
+<th scope="col" class="org-left">收費方式</th>
+<th scope="col" class="org-left">適合</th>
+<th scope="col" class="org-left">典型例子</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">訂閱制</td>
+<td class="org-left">月費吃到飽（有上限）</td>
+<td class="org-left">個人日常使用</td>
+<td class="org-left">ChatGPT Plus（$20/月）、Gemini Pro</td>
+</tr>
+
+<tr>
+<td class="org-left">按量付費</td>
+<td class="org-left">用多少算多少</td>
+<td class="org-left">開發、API 串接</td>
+<td class="org-left">Claude API、Gemini API、OpenAI API</td>
+</tr>
+</tbody>
+</table>
+
+<p>
+老師日常通常用訂閱制就夠；要寫腳本／包 Skill／串自動化，才會碰到按量付費。
+</p>
+</div>
+</li>
+<li><a id="orgf0ccd1f"></a>怎麼選模型（以 Anthropic Claude 為例，其他家邏輯類似）：<br />
+<div class="outline-text-6" id="text-6-1-1-1-2">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">模型</th>
+<th scope="col" class="org-left">用在</th>
+<th scope="col" class="org-left">額度成本</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">Opus 4.7</td>
+<td class="org-left">複雜分析、深度思考</td>
+<td class="org-left">高（5x Sonnet）</td>
+</tr>
+
+<tr>
+<td class="org-left">Sonnet 4.6</td>
+<td class="org-left">嚴格照範本、多附件</td>
+<td class="org-left">中（基準）</td>
+</tr>
+
+<tr>
+<td class="org-left">Haiku 4.5</td>
+<td class="org-left">單純任務、快產出</td>
+<td class="org-left">低（1/3 Sonnet）</td>
+</tr>
+</tbody>
+</table>
+
+<p>
+對應今天流程：
+</p>
+<ul class="org-ul">
+<li>Step 3 小論文（要照範本＋多附件）→ Sonnet 4.6</li>
+<li>Step 4 換骨架（單純）→ Haiku 4.5</li>
+<li>回家備課 → Haiku 為主，複雜時切 Sonnet</li>
+</ul>
+</div>
+</li>
+</ol>
+</li>
+<li><a id="org2b3b96a"></a>開源模型<br />
+<div class="outline-text-5" id="text-6-1-1-2">
+<p>
+<b>權重公開可下載，可以放在自己電腦或學校伺服器上跑</b> 。資料完全不外流。
+</p>
+
+<p>
+例如：
+</p>
+<ul class="org-ul">
+<li><b>Meta</b> ：Llama 系列（4 系最強）</li>
+<li><b>Mistral AI</b> （法國）：Mistral、Mixtral</li>
+<li><b>Alibaba</b> ：Qwen 系列（中文表現特別好）</li>
+<li><b>Google</b> ：Gemma 系列（小型開源版）</li>
+<li><b>DeepSeek</b> （中國）：DeepSeek-V3、DeepSeek-R1（推理模型）</li>
+</ul>
+</div>
+<ol class="org-ol">
+<li><a id="org6d6842b"></a>優點：<br />
+<div class="outline-text-6" id="text-6-1-1-2-1">
+<ul class="org-ul">
+<li><b>資料完全不外流</b> ——學生作文、IEP、考卷、家訪紀錄都可以放</li>
+<li><b>零持續成本</b> ——買一次硬體就能用到壞</li>
+<li><b>可離線運作</b> ——馬祖網路斷線、出國、偏遠校區都不受影響</li>
+<li><b>可微調</b> ——餵自己學校的歷年資料訓練「校本模型」</li>
+</ul>
+</div>
+</li>
+<li><a id="org8a5b8c1"></a>缺點：<br />
+<div class="outline-text-6" id="text-6-1-1-2-2">
+<ul class="org-ul">
+<li><b>能力通常落後商業模型半年到一年</b> （特別是中文、推理、長文）</li>
+<li><b>要自己維運</b> ——升級、出 bug 自己修</li>
+<li><b>起步門檻高</b> ——要會裝 Ollama / vLLM、會挑模型版本</li>
+</ul>
+</div>
+</li>
+<li><a id="orgda77f92"></a>代價：<br />
+<div class="outline-text-6" id="text-6-1-1-2-3">
+<ol class="org-ol">
+<li>硬體成本（顯卡 GPU、記憶體 32GB+、電費）—— Mac M3/M4 也夠跑 7B-13B 級模型</li>
+<li>軟體成本: 需要安裝管理工具（Ollama、vLLM）、下載模型權重（幾 GB 到幾十 GB 不等）</li>
+<li>時間成本: 安裝、維護、升級都要花時間，特別是出問題的時候</li>
+<li>你需要什麼：對你的隱私要求若高、預算有限、有舊筆電可用 → 開源；若只是備課寫東西、不碰學生個資 → 商業模型更省事</li>
+</ol>
+
+<p>
+<b>工具入門推薦</b> ： <a href="https://ollama.com">Ollama</a> —— 一行指令裝、一行指令拉模型、一行指令對話。Mac 上跑 Llama 4 8B 約等同 GPT-3.5 水準，免費且離線。
+</p>
+</div>
+</li>
+</ol>
+</li>
+</ol>
+</div>
+</div>
+<div id="outline-container-orgf82dafc" class="outline-3">
+<h3 id="orgf82dafc"><span class="section-number-3">6.2.</span> AI 到底怎麼辦到的？</h3>
+<div class="outline-text-3" id="text-6-2">
+</div>
+<div id="outline-container-org9015fbd" class="outline-4">
+<h4 id="org9015fbd"><span class="section-number-4">6.2.1.</span> AI 的本質是「函數」</h4>
+<div class="outline-text-4" id="text-6-2-1">
+<p>
+「你國中學過函數對不對？輸入一個值、經過規則、得到輸出。AI 做的事情一模一樣。」
+</p>
+
+<pre class="example" id="orge10e58e">
+華氏溫度 = 1.8 × 攝氏溫度 + 32
+</pre>
+
+<p>
+以上這個函數可以寫成 y=f(x)，而 f(x) = 1.8x + 32，輸入攝氏溫度 x，輸出華氏溫度 f(x)。這是一個有兩個參數的函數：1.8 和 32。你可以把它想像成一個黑盒子，裡面有這兩個參數，輸入攝氏溫度，黑盒子就會根據這兩個參數計算出華氏溫度。
+</p>
+
+<p>
+我們可以再舉一個更複雜的函數：學測落點預測。輸入你的學測成績，經過一個複雜的函數，輸出你可能被哪些大學錄取。
+</p>
+
+<div id="org9f1828a" class="figure">
+<p><img src="images/2026-04-29_11-28-33.png" alt="2026-04-29_11-28-33.png" width="500px" />
+</p>
+</div>
+
+<p>
+這其實也是一個長的像這樣的函數：y=f(x)，其中的 y 是你申請某間學校的錄取可能性，而 x 則包含了你的國文、英文、數學、社會、自然成績。
+</p>
+
+<p>
+其中一個簡化版的函數可能長這樣：f(x) = 國文成績 × 0.3 + 英文成績 × 0.25 + 數學成績 × 0.35 + 社會成績 × 0.05 + 自然成績 × 0.05
+</p>
+
+<p>
+最後得到的就是你在落點表上看到的錄取機率。當然，實際的學測落點預測函數比這個複雜得多，裡面可能還會考慮你的校系志願、歷年分數分布、甚至是一些非量化的因素，但基本原理是一樣的： <b>輸入 → 函數 → 輸出</b> 。
+</p>
+
+<div id="org2bcc16a" class="figure">
+<p><img src="images/2026-04-29_11-28-16.png" alt="2026-04-29_11-28-16.png" width="500px" />
+</p>
+</div>
+
+<p>
+現在，你應該可以接受這樣一個函數了吧：輸入 28*28 個小數，輸出一堆機率。
+什麼，你不知道這是做什麼的？
+</p>
+
+
+<div id="org4a49a8c" class="figure">
+<p><img src="images/04-digit5-pixels.png" alt="04-digit5-pixels.png" width="500" />
+</p>
+</div>
+
+<p>
+這個函數是用來做手寫辨識的，輸入是一張 28*28 像素的圖片（每個像素是一個小數，代表亮度），輸出是一個包含 0~9 十個數字機率的向量（例如：0 的機率是 0.01，1 的機率是 0.05，⋯⋯5 的機率是 0.92）。
+</p>
+
+
+<div id="orgda83b34" class="figure">
+<p><img src="images/04-digit5-prob.png" alt="04-digit5-prob.png" width="500" />
+</p>
+</div>
+
+<p>
+如果你能接受這樣一個函數，那麼你也應該能接受另一個函數：輸入 10*300 個小數，輸出一段文字。
+</p>
+
+
+<div id="org2c427db" class="figure">
+<p><img src="images/2026-04-29_10-04-52.png" alt="2026-04-29_10-04-52.png" width="500" />
+</p>
+</div>
+
+<p>
+這就是 GPT-4 的核心函數：輸入是一段文字的「向量表示」（每個字被轉換成一個 300 維的向量），輸出是一段文字（也是一個向量，最後再轉回文字）。
+</p>
+
+<p>
+到這裡，你應該已經可以接受 AI 是一個函數了。那麼，AI 可以做什麼樣的函數呢？下面是一些例子：
+</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">任務</th>
+<th scope="col" class="org-left">輸入</th>
+<th scope="col" class="org-left">→ f →</th>
+<th scope="col" class="org-left">輸出</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">手寫辨識</td>
+<td class="org-left">一張圖片</td>
+<td class="org-left">→ f →</td>
+<td class="org-left">0~9 各數字的機率</td>
+</tr>
+
+<tr>
+<td class="org-left">貓狗辨識</td>
+<td class="org-left">一張照片</td>
+<td class="org-left">→ f →</td>
+<td class="org-left">貓 90%、狗 10%</td>
+</tr>
+
+<tr>
+<td class="org-left">文字生成</td>
+<td class="org-left">一段提示詞</td>
+<td class="org-left">→ f →</td>
+<td class="org-left">生成的文字</td>
+</tr>
+
+<tr>
+<td class="org-left">影像生成</td>
+<td class="org-left">一段描述</td>
+<td class="org-left">→ f →</td>
+<td class="org-left">生成的圖片</td>
+</tr>
+</tbody>
+</table>
+
+<p>
+不管 AI 看起來多厲害，骨子裡都是： <b>輸入 → 函數 → 輸出</b> 。
+</p>
+</div>
+</div>
+<div id="outline-container-orged1c9e0" class="outline-4">
+<h4 id="orged1c9e0"><span class="section-number-4">6.2.2.</span> Token：AI 眼中的世界</h4>
+<div class="outline-text-4" id="text-6-2-2">
+<p>
+AI 看到的不是文字，而是 Token（一小段一小段的碎片）。
+</p>
+
+<p>
+打開 <a href="https://platform.openai.com/tokenizer">OpenAI Tokenizer</a> 試試：
+</p>
+<ul class="org-ul">
+<li>輸入「馬祖藍眼淚」，看它被切成幾個 token</li>
+<li>再輸入「314159」，數字的切法跟你想的完全不一樣</li>
+<li>這就是為什麼 AI 有時候數學會算錯——它看到的不是「數字」，是碎片</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgece3b3d" class="outline-4">
+<h4 id="orgece3b3d"><span class="section-number-4">6.2.3.</span> 生成式 AI 是「會接龍的函數」</h4>
+<div class="outline-text-4" id="text-6-2-3">
+<p>
+既然 AI 是函數，那生成式 AI 是什麼樣的函數？
+</p>
+
+<p>
+答案： <b>一個每次只猜下一個字的函數，不斷把自己的輸出接回輸入，像接龍一樣。</b>
+</p>
+
+<div id="org8ec25df" class="figure">
+<p><img src="img/06-blackboard.png" alt="06-blackboard.png" width="650px" />
+</p>
+</div>
+
+<p>
+以「什麼是臺灣最美的風景？」為例：
+</p>
+
+
+<div id="org68c422b" class="figure">
+<p><img src="img/06-prob-step1.png" alt="06-prob-step1.png" width="600px" />
+</p>
+</div>
+
+
+<div id="orgfbbdb0d" class="figure">
+<p><img src="img/06-prob-step2.png" alt="06-prob-step2.png" width="600px" />
+</p>
+</div>
+
+<pre class="example" id="org30265ad">
+f("什麼是臺灣最美的風景？")           → 臺（機率最高）
+f("什麼是臺灣最美的風景？臺")         → 灣
+f("什麼是臺灣最美的風景？臺灣")       → 最
+f("什麼是臺灣最美的風景？臺灣最")     → 美
+  ……
+f("什麼是臺灣最美的風景？臺灣最美的風景是") → 人
+</pre>
+
+<p>
+就像你在 LINE 上打字，鍵盤會自動建議下一個字——AI 做的是同一件事，只是它猜得非常非常準。
+</p>
+
+<p>
+但它不是每次都選機率最高的字——像轉輪盤一樣，機率高的字比較容易被選中，但不是一定：
+</p>
+
+<div id="org1afd04e" class="figure">
+<p><img src="img/06-roulette.png" alt="06-roulette.png" width="600px" />
+</p>
+</div>
+
+<p>
+AI 會加入一點隨機性（叫做「溫度參數」），讓回答更多樣。這也是為什麼你問同一個問題兩次，可能會得到不同的答案。
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-org927e044" class="outline-3">
+<h3 id="org927e044"><span class="section-number-3">6.3.</span> 為什麼會生出幻覺（Hallucination）</h3>
+<div class="outline-text-3" id="text-6-3">
+<p>
+<b>回看開場那道題</b> ：
+</p>
+<ul class="org-ul">
+<li><b>Gemini 2.5 Pro 編整篇假論文</b> ——這是「常態」</li>
+<li><b>GPT 5 誠實認輸</b> ——但這是「有時」</li>
+<li><b>NotebookLM 沒編</b> ——但這 <b>不是</b> 它「比較聰明」</li>
+</ul>
+
+<p>
+<b>為什麼有的會編、為什麼 NotebookLM 是例外？</b>
+</p>
+
+<ul class="org-ul">
+<li>模型不是「知道事實」，是「猜下一個最可能的字」（前一段已鋪陳）</li>
+<li>AI 不是知識庫，是語言模型</li>
+<li><b>為什麼幻覺答案那麼像真的</b> ：因為模型就是在模仿「煞有其事」的格式</li>
+<li><b>為什麼 GPT 5 有時會說「找不到」、Gemini 卻照編</b> ：訓練時的「對齊」（alignment）強度不同——但這是 <b>偶然</b> ，不是設計保證</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org9580bc1" class="outline-3">
+<h3 id="org9580bc1"><span class="section-number-3">6.4.</span> RAG 如何解決幻覺問題</h3>
+<div class="outline-text-3" id="text-6-4">
+<ul class="org-ul">
+<li>一句話：問問題前，先把 <b>你的文件</b> 塞進 prompt</li>
+<li><p>
+流程示意（一張關鍵圖，詳見 <code>RAG-flow-diagram.md</code> ）：
+</p>
+
+<div class="org-src-container">
+<pre class="src src-nil">  使用者問題
+       ↓
+  [檢索] ← 在你上傳的文件裡找最相關的幾段
+       ↓
+  [增強] ← 把問題＋檢索結果一起塞進 prompt
+       ↓
+  [生成] ← 模型依「眼前的素材」回答
+</pre>
+</div></li>
+
+<li>三個字：*Retrieval Augmented Generation = RAG*</li>
+<li>為什麼 NotebookLM 不會編：檢索後它的素材裡沒有，它就老實說沒有</li>
+<li>對應今晚實作：NotebookLM 的「引註可追溯」、Claude 上傳檔案後的「以上傳資料為準」——都是 RAG 思維</li>
+</ul>
+</div>
+<div id="outline-container-orgd0634a9" class="outline-4">
+<h4 id="orgd0634a9"><span class="section-number-4">6.4.1.</span> 對教師工作流的意涵</h4>
+<div class="outline-text-4" id="text-6-4-1">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">工具 ／ 模式</th>
+<th scope="col" class="org-left">適合</th>
+<th scope="col" class="org-left">不適合</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">ChatGPT 對話</td>
+<td class="org-left">腦力激盪、改寫、創意聯想</td>
+<td class="org-left">事實查核、引註研究</td>
+</tr>
+
+<tr>
+<td class="org-left">NotebookLM</td>
+<td class="org-left">研究筆記、文獻彙整、引註追溯</td>
+<td class="org-left">發散思考、跨領域聯想</td>
+</tr>
+
+<tr>
+<td class="org-left">Claude 上傳檔</td>
+<td class="org-left">依素材生成成品（小論文、報告）</td>
+<td class="org-left">沒給素材就要它「想出」</td>
+</tr>
+</tbody>
+</table>
+
+<p>
+<b>能不能信任這個答案——要看工具設計，不是看模型聰不聰明。</b>
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-orgb717d18" class="outline-3">
+<h3 id="orgb717d18"><span class="section-number-3">6.5.</span> 一個科展題目：AI 怎麼「預測」明晚會不會出現藍眼淚？</h3>
+<div class="outline-text-3" id="text-6-5">
+<p>
+<b>延伸應用</b> ：把今晚學到的東西用到一個學生科展題目。
+</p>
+
+<ul class="org-ul">
+<li>對應：相知篇 第一、二章（前面已帶過）</li>
+<li>直覺：把「水溫、月相、潮汐、風向、過去出現紀錄」當輸入 → 輸出「明晚機率」</li>
+<li>核心觀念：*資料 → 特徵 → 模型 → 預測* ；機器學習的最小心智模型</li>
+<li>為什麼這跟 ChatGPT 是同一回事：*都在「猜下一個」*——只是「下一個」的內容不同（字 vs 機率）</li>
+<li>這個題目是給對 AI 有興趣的學生：可以實際撰寫程式（Python + scikit-learn），不只是用 AI 工具</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-orgea83157" class="outline-2">
+<h2 id="orgea83157"><span class="section-number-2">7.</span> Q&amp;A</h2>
+<div class="outline-text-2" id="text-7">
+</div>
+<div id="outline-container-org1fe60bd" class="outline-3">
+<h3 id="org1fe60bd"><span class="section-number-3">7.1.</span> 最後打個廣告</h3>
+<div class="outline-text-3" id="text-7-1">
+<ul class="org-ul">
+<li>《和 AI 做朋友——相知篇：揭秘生成式 AI》教材教案：<a href="https://market.cloud.edu.tw/resources/web/1841948">https://market.cloud.edu.tw/resources/web/1841948</a></li>
+<li>可下載來看，或直接當教材給學生用</li>
+<li><b>全書對應的教學短片正在趕工生成中</b></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org9dae567" class="outline-3">
+<h3 id="org9dae567"><span class="section-number-3">7.2.</span> Q&amp;A</h3>
+<div class="outline-text-3" id="text-7-2">
+<ul class="org-ul">
+<li>一個 Claude Code 試用名額（雲林＋高雄場慣例）</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org283a4c0" class="outline-2">
+<h2 id="org283a4c0"><span class="section-number-2">8.</span> 參考資料</h2>
+<div class="outline-text-2" id="text-8">
+</div>
+<div id="outline-container-orge232768" class="outline-3">
+<h3 id="orge232768"><span class="section-number-3">8.1.</span> 主要教材</h3>
+<div class="outline-text-3" id="text-8-1">
+<ul class="org-ul">
+<li><a href="https://market.cloud.edu.tw/list/ai.jsp">和AI做朋友系列書籍</a></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgebd5f3b" class="outline-3">
+<h3 id="orgebd5f3b"><span class="section-number-3">8.2.</span> 馬祖在地素材（NotebookLM 用）</h3>
+<div class="outline-text-3" id="text-8-2">
+<ul class="org-ul">
+<li><a href="https://www.sea.matsu.edu.tw/bluetears.html">連江縣戶外教育及海洋教育中心 — 藍眼淚專頁</a></li>
+<li><a href="https://www.natgeomedia.com/environment/article/content-4757.html">國家地理 — 解開馬祖藍眼淚之謎（夜光蟲）</a></li>
+<li><a href="https://www.mjib.gov.tw/FileUploads/eBooks/89ef47c531434b10a8aab2d1cc00eec6/Section_file/a82d42a82fe0486cbffb77ea663f1545.pdf">清流雙月刊 — 夜光蟲科普 PDF</a></li>
+<li><a href="https://www.nmmba.gov.tw/News_Content.aspx?n=FF40572369107C6E&amp;sms=4BD2D29B72CA27F8&amp;s=7050D6B9D3C731DF">國立海洋生物博物館 — 藍眼淚爆量是生態危機？</a></li>
+<li><a href="https://city.gvm.com.tw/article/92704">城市學 — 馬祖藍眼淚是蟲還是藻？</a></li>
+<li><a href="https://zh.wikipedia.org/zh-tw/%E5%A4%9C%E5%85%89%E8%97%BB">維基百科 — 夜光藻</a></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="date">Date: 2026-05-14</p>
+<p class="author">Author: 顏永進（臺南一中）</p>
+<p class="date">Created: 2026-05-11 Mon 15:04</p>
+</div>
+</body>
+</html>
