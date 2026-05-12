@@ -87,12 +87,19 @@ description: 把「研究筆記＋圖＋格式 → 高中生科學小論文 docx
 
 ---
 
-## 延伸 B：生成投影片（reveal.js HTML 簡報）
+## 延伸 B：生成投影片（兩種格式擇一）
 
-當使用者完成論文後說「幫我做投影片」「生簡報」「reveal.js 版」，
-依下列規格產出一份 *單檔 HTML 投影片* （inline CSS／JS，瀏覽器直接開）。
+當使用者完成論文後說「幫我做投影片」「生簡報」「換成簡報」，
+*先詢問使用者要哪一種格式* ：
 
-### 投影片結構（10 張內）
+| 格式            | 適合誰                                          |
+|-----------------|-------------------------------------------------|
+| `.pptx` （主推）| 一般教師、學生——可在 PowerPoint／Keynote 編輯  |
+| `.html` reveal.js | 進階使用者——瀏覽器直接開、可印 PDF            |
+
+兩種格式的投影片結構、內容紀律完全相同，只差最後輸出。
+
+### 共用：投影片結構（10 張內）
 
 | 第 N 張 | 內容                                                   |
 |---------|--------------------------------------------------------|
@@ -100,43 +107,94 @@ description: 把「研究筆記＋圖＋格式 → 高中生科學小論文 docx
 | 2       | 研究動機（前言節錄、3-5 個 bullet）                    |
 | 3-4     | 文獻探討重點（兩派觀點對照、引註簡標）                 |
 | 5       | 研究方法（文獻分析法、資料來源、分析步驟）             |
-| 6-7     | 研究發現——嵌入圖 1（成因因果）、圖 2（時間軸）        |
+| 6-7     | 研究發現——嵌入圖 1（成因因果）、圖 2（時間軸）         |
 | 8       | 討論：研究結果代表什麼意思？                           |
 | 9       | 結論：發現＋限制＋後續研究建議                         |
-| 10      | Q&A 收尾                                                |
+| 10      | Q&A 收尾                                               |
 
-### 視覺規格
-
-- *深色背景* （深藍 #0f1b3d 或近黑），白字
-- 字型：~PingFang TC~ / ~Microsoft JhengHei~ / sans-serif
-- 標題級用大字（h1 ≈ 48px、h2 ≈ 32px）
-- 內文 24px，bullet 一張 5 點以內
-- *學術簡潔風* ：不要花俏動畫、不要漸層、不要 emoji
-- 圖片嵌入時 ~max-height: 70vh~ 避免溢出
-
-### 技術規格
-
-- *單檔 HTML* ：inline CSS、inline JS，不引用外部資源（圖片以 base64 內嵌或 user 自行調整）
-- reveal.js 用 [[https://cdn.jsdelivr.net/npm/reveal.js@4/dist/][CDN 版]]，linked from inline `<script>` 標籤
-- 鍵盤左右鍵切換投影片、Esc 看 overview
-- 列印模式：~?print-pdf~ 加在網址後可直接列印成 PDF
-
-### 內容紀律（重要）
+### 共用：內容紀律（重要）
 
 - *投影片內容必須與論文一致* ——不從論文找不到的內容
 - *引註保留* ：每個論點末標 ~(註一)~ 等
 - *圖片用論文裡的兩張* ——不要重新生成圖
+- *一張投影片 5 點以內* ，每點不超過 12 字
+
+---
+
+### 格式 B1：~.pptx~（主推給一般教師）
+
+教師最熟悉 PowerPoint，可直接打開後在介面內修改、加動畫、套校徽。
+
+#### 產出方式
+
+用 ~python-pptx~ 套件編程產出 ~.pptx~ 檔。Skill 執行流程：
+1. Claude 在程式碼執行環境裡 ~pip install python-pptx~ （若未裝）
+2. 用 ~python-pptx~ 一頁一頁建構投影片
+3. 嵌入研究筆記中的兩張 PNG 圖
+4. 輸出 ~slides.pptx~ 給使用者下載
+
+#### 視覺規格
+
+- 投影片比例：16:9（modern wide）
+- 背景：白色或極淺灰
+- 字型：中文 *標楷體* 或 *微軟正黑體* ；英文 *Calibri* 或 *Arial*
+- 標題：32-40 pt；內文：18-24 pt
+- 配色：標題深藍（#1F3864）、內文深灰（#333333）
+- *簡潔學術風* ：不要陰影、不要漸層、不要表情符號
+
+#### Python 範例骨架（給 Claude 參考）
+
+#+begin_src python
+from pptx import Presentation
+from pptx.util import Inches, Pt
+from pptx.dml.color import RGBColor
+
+prs = Presentation()
+prs.slide_width = Inches(13.333)   # 16:9
+prs.slide_height = Inches(7.5)
+
+# 封面
+slide = prs.slides.add_slide(prs.slide_layouts[5])  # 空白
+title = slide.shapes.title
+title.text = "馬祖藍眼淚的成因之爭"
+# ... 設定字型、加副標題、加作者 ...
+
+# 嵌圖（研究發現）
+slide = prs.slides.add_slide(prs.slide_layouts[5])
+slide.shapes.add_picture("圖1.png", Inches(1), Inches(1.5), height=Inches(5))
+
+prs.save("slides.pptx")
+#+end_src
+
+---
+
+### 格式 B2：~.html~ reveal.js（給進階使用者）
+
+#### 視覺規格
+
+- *深色背景* （深藍 #0f1b3d 或近黑），白字
+- 字型：~PingFang TC~ / ~Microsoft JhengHei~ / sans-serif
+- 標題級用大字（h1 ≈ 48px、h2 ≈ 32px）
+- 內文 24px、bullet 一張 5 點以內
+- *學術簡潔風* ：不要花俏動畫、不要漸層、不要 emoji
+- 圖片嵌入時 ~max-height: 70vh~ 避免溢出
+
+#### 技術規格
+
+- *單檔 HTML* ：inline CSS、inline JS
+- reveal.js 用 CDN 版（jsdelivr），linked from inline `<script>` 標籤
+- 鍵盤左右鍵切換投影片、Esc 看 overview
+- 列印模式：網址後加 ~?print-pdf~ 可直接列印成 PDF
+- 圖片：以 base64 內嵌或請使用者提供 URL
+
+---
 
 ### 觸發後操作
 
 1. 先問使用者：「您希望同時保留論文 docx 嗎？還是只要簡報？」
-2. 若使用者只要簡報，直接從研究筆記 + 兩張圖產出簡報，跳過 docx
-3. 若使用者已有完整論文，直接從論文摘要產出簡報
-
-### 輸出
-
-- 一份 `slides.html`，可在瀏覽器直接開啟瀏覽
-- 配發給使用者「列印 PDF」或「截圖」的指引（若使用者問如何轉檔）
+2. 接著問：「投影片要 ~.pptx~（PowerPoint 可開）還是 ~.html~（reveal.js）？」
+3. 若使用者沒指定，*預設用 .pptx* （教師受眾較熟悉）
+4. 若使用者已有完整論文，直接從論文摘要產出簡報；若沒有，從研究筆記＋兩張圖產出
 
 ---
 
