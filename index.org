@@ -428,38 +428,34 @@ SKill: 把某個任務流程化，寫成一個 SOP（Standard Operating Procedur
 #+end_example
 AI 就會知道要先讀研究筆記、再把圖表嵌進去、最後套上論文格式。
 
-*現場 demo 用* ： [[file:snProposal.zip][snProposal.zip]] —— 「小論文流程」Skill 包，內含 SKILL.md + 小論文範本.docx + 換骨架-prompts.md
-
-**** 方式 A：直接下載 zip
-
-1. 點上方 ~snProposal.zip~ 下載解壓
-2. 把整個 ~snProposal/~ 資料夾上傳到 Claude（Settings → Capabilities → Skills）
-3. 對 Claude 說：「小論文流程，幫我依研究題目、研究素材、圖、論文格式做一份完整的論文＋簡報」
-4. Claude 自動載入 SKILL.md、找內附範本、要求你上傳研究筆記與圖
-5. 一鍵三檔產出：論文.docx + slides.pptx + slides.html
-
-**** 方式 B：讓 Claude 自己生 zip（現場 demo 用）
-
-*目的* ：讓學員親身體驗「叫 Claude 替你打包 Skill」。把以下 prompt 整段貼進 web Claude 對話框，它會自動下載、打包、給你下載連結：
+*現場 demo prompt* ——學員在剛跑完論文＋兩種投影片那一輪後， *緊接著* 把這段貼給 Claude：
 
 #+begin_example
-請幫我做這件事：
+我們剛才上傳了研究素材、兩張圖、小論文格式，依格式生成了小論文，
+最後生成兩種投影片（.pptx 和 .html）。
 
-一、從以下三個 GitHub 連結下載檔案，放到一個叫 snProposal/ 的資料夾裡：
-  1. https://raw.githubusercontent.com/letranger/2026-05-14-matsu-ai-workshop/main/snProposal/SKILL.md
-  2. https://raw.githubusercontent.com/letranger/2026-05-14-matsu-ai-workshop/main/snProposal/小論文範本.docx
-  3. https://raw.githubusercontent.com/letranger/2026-05-14-matsu-ai-workshop/main/snProposal/換骨架-prompts.md
+請把這整個流程打包成一個 Claude Skill 讓我下載：
 
-二、把整個 snProposal/ 資料夾用 Python zipfile 打包成 snProposal.zip
-    要點：UTF-8 旗標需自動設定（Python zipfile 預設會處理），讓 Windows
-    預設解壓器能正常顯示中文檔名。
+1. 寫一份 SKILL.md ——含觸發詞、SOP 步驟、輸入要求、輸出規格
+2. 把我剛才用的小論文範本 docx 一起包進去
+3. 整個壓成 snProposal.zip 給我下載
 
-三、把 snProposal.zip 給我下載。
+下次我說「小論文流程」，你就能依這個 Skill 重跑同樣的流程，
+不必再解釋一遍。
 #+end_example
 
-拿到 zip 後的安裝動作跟方式 A 一樣：解壓 → 上傳到 Settings → Skills。
+Claude 會 *從這次對話歷史抽出流程* ，自己寫 SKILL.md、打包成 zip 給學員下載。
 
-*注意* ：需 Claude Pro 才能用 Custom Skill；免費版可以「複製 SKILL.md 內容貼進對話」當 system prompt，效果接近但每次都要貼一遍。
+*教學意圖* ：讓學員親身體驗「**我描述剛做過的事 → AI 把它記成 SOP**」這個動作。
+這正是 Skill 的核心精神——*你做過一次、AI 替你記下來、下次直接呼叫*。
+
+*講師備援* ：若現場 Claude 跑不出來（學員免費額度炸了等），可改下載完整版的
+[[file:snProposal.zip][snProposal.zip]] 給學員當會後參考檔，內含 SKILL.md + 小論文範本.docx + 換骨架-prompts.md。
+
+*關於免費版限制* ：Custom Skill 需 Claude Pro 才能在 Settings → Capabilities → Skills 安裝。
+免費版學員拿到 zip 也無法直接安裝——*但這個 demo 的價值在「過程體驗」* ，
+不在「結果可用」。學員看到「我描述流程 → AI 打包」這個動作，就懂了 Skill 是什麼。
+回家若想用，再升級 Pro 即可。
 
 * 實作二 (L3-L4)：模型、代理人與你
 
