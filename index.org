@@ -45,12 +45,12 @@
 
 * AI 責任轉移四階段模型
 
-| Level | 名稱    | 你怎麼一秒辨識？                       | AI 角色  | 人類角色 |
-|-------+---------+----------------------------------------+----------+----------|
-| L1    | 對話 AI | 你打字、AI 回字                        | 回答問題 | 親自操作 |
-| L2    | 協作 AI | 你還在點滑鼠，但 app 裡有 AI           | 參與流程 | 主導流程 |
-| L3    | 代理 AI | AI 在動你的鍵盤／滑鼠／檔案            | 執行任務 | 監督執行 |
-| L4    | 常駐 AI | 你不在電腦前，AI 還在背景跑            | 持續運作 | 設定規則 |
+| 分級        | 使用者 vs AI                | AI 角色  | 人類角色 |
+|-------------+-----------------------------+----------+----------|
+| L1: 對話 AI | 你打字、AI 回字             | 回答問題 | 親自操作 |
+| L2: 協作 AI | 你還在點滑鼠，但 app 裡有 AI | 參與流程 | 主導流程 |
+| L3: 代理 AI | AI 在動你的鍵盤／滑鼠／檔案  | 執行任務 | 監督執行 |
+| L4: 常駐 AI | 你不在電腦前，AI 還在背景跑  | 持續運作 | 設定規則 |
 
 *核心判準* ： *誰在動鍵盤* 。
 
@@ -110,9 +110,9 @@
   1. 利用NotebookLM讀取在地素材，產出一份研究筆記（含參考文獻）
   2. 利用Napkin從研究筆記畫出「藍眼淚成因因果圖」和「藍眼淚研究／觀光時間軸」
   3. 利用Claude把研究筆記＋圖 → 小論文初稿
+  2. Skill應用與設計同一份(內容換骨架（行政報告／研習心得）     
 - 實作2 (L3)
-  1. Skill應用與設計同一份(內容換骨架（行政報告／研習心得）
-  2. 讓AI模型走出瀏覽器，操作電腦（Gemini CLI demo）
+  1. 讓AI模型走出瀏覽器，操作電腦（Gemini CLI demo）
 - 示範 (L4)
   1. AI代理人能做到什麼程度
   2. 模型的選擇與計費
@@ -166,6 +166,7 @@
 | 5 報  | Claude vs Gamma     | 同一份做投影片， *兩工具對比*           | ~slides.html~ + ~.pptx~ |
 
 跑完手上有：研究筆記＋兩張圖＋小論文＋骨架變體＋兩種投影片。
+
 ** Step 1：NotebookLM 讀題材＋產出研究筆記
 
 *** 訂題
@@ -196,11 +197,15 @@
 每份請附：完整 URL、發表年份、一句話介紹、可寫進論文哪一節（引言／文獻探討／討論／結論）。
 #+end_example
 **** NotebookLM
-利用NotebokLM內建的「探索」（在網路上搜尋新來源/Discover sources）: 以NotebookLM 搜尋「馬祖藍眼淚」
+- 利用NotebokLM內建的「探索」（在網路上搜尋新來源/Discover sources）: 以NotebookLM 搜尋「馬祖藍眼淚」
+- 或，其實也可以將上面的prompt直接丟給 NotebookLM
 
 *** 操作
 1. 以gmail帳號登入[[https://notebooklm.google.com][NotebookLM]]
 2. 依序問四個問題（ *每題對應論文一個段落，問完直接餵進該段* ）：
+3. 這裡的重點不是「讓 NotebookLM 幫你找資料」，而是「讓 NotebookLM 幫你整理資料」。前者 Google 就能做，後者才是 NotebookLM 的強項。
+4. NotebookLM幫你整理完資料後，我們消化、吸收、提問，累積寫論文的素材。以下的提問順序與內容除了對應論文的章節結構，應該是依序看完素材、問第1個問題、消化完答案後再問第2個問題、消化完再問第3個問題⋯⋯
+5. 這裡沒時間讓大家自己完整的閱讀與消化素材
 
 **** Q1（引言／背景）
 #+begin_example
@@ -270,7 +275,6 @@
 #+ATTR_HTML: :width 500
 [[file:images/2026-05-11_14-28-52.png]]
 
-   
 ** Step 2：Napkin 畫兩張視覺化圖
 1. 以gmail帳號登入[[https://www.napkin.ai][Napkin]]
 2. 從研究筆記直接複製貼上，NotebookLM 已經幫你寫好兩段條列。
@@ -307,8 +311,8 @@
 
 【附件】
 1. NotebookLM 整理的素材（含完整參考文獻）
-2. 因果圖，將嵌入「貳、正文」研究結果段
-3. 時間軸，將嵌入「貳、正文」研究結果段
+2. 因果圖，配合論文嵌入適當段落中
+3. 時間軸，配合論文嵌入適當段落中
 4. 小論文範本.docx — 官方範本（含規則＋章節骨架）
 
 【做什麼】
@@ -329,7 +333,6 @@
 作者：〔請學生填〕。國立馬祖高級中學。〔請學生填年級〕
 指導教師：〔請學生填〕
 #+end_example
-
 
 ** Step 4：同一份內容，換骨架
 
@@ -360,34 +363,6 @@
 *附件對應檔案* ：
 1. ~paper_draft.docx~ — Step 3 產出的小論文
 2. [[file:教案範本-橋頭糖廠版.docx][~教案範本-橋頭糖廠版.docx~]] — 高雄場驗證教案
-
-** Skill
-如果有某一項任務需要你多次來回和AI對話、逐一提供檔案才能完成，而這項任務又是你的例行任務....
-
-SKill: 把某個任務流程化，寫成一個 SOP（Standard Operating Procedure）。你只要寫一次這個 SOP，以後每次遇到同樣的任務，就直接叫 AI 按照這個 SOP 去做就好，不需要再解釋一次流程了。
-
-例如，把「依研究筆記、圖表、論文格式寫小論文」這個流程寫成一個 Skill，叫「小論文初稿生成器」，以後每次要寫小論文，只要說
-#+begin_example
-依研究素材、圖表，寫一篇符合小論文格式的初稿。
-#+end_example
-AI 就會知道要先讀研究筆記、再把圖表嵌進去、最後套上論文格式。
-
-*現場 demo 用* ： [[file:snProposal.zip][snProposal.zip]] —— 「小論文流程」Skill 包，內含 SKILL.md + 小論文範本.docx + 換骨架-prompts.md
-
-使用方式：
-1. 下載解壓 → 把整個 ~snProposal/~ 資料夾上傳到 Claude（Settings → Capabilities → Skills）
-2. 對 Claude 說：「小論文流程，幫我依研究題目、研究素材、圖、論文格式寫一篇小論文初稿」
-3. Claude 自動載入 SKILL.md、找內附範本、要求你上傳研究筆記與圖
-4. 一條 prompt 跑完 Step 3（寫論文）；若再追加「換骨架」也支援
-
-*注意* ：需 Claude Pro 才能用 Custom Skill；免費版可以「複製 SKILL.md 內容貼進對話」當 system prompt，效果接近但每次都要貼一遍。
-
-** 帶走的觀念 :noexport:
-- 「核心內容只生成一次，格式可以隨需求換」
-- 「主任要你交活動報告？同一招」
-- 「你要寫研習心得？同一招」
-- 「學生交完小論文要你寫評語表？同一招」
-- *「教研究的時候是學生，要備課的時候變老師，背後同一份核心素材」*
 
 ** Step 5：Claude vs Gamma —— 同一份內容、兩種簡報
 同一份內容的兩種不同版本投影片： *工程師思維*  vs *設計師思維* 的差異
@@ -441,6 +416,50 @@ HTML 投影片，10 張內。
 - 對教師日常：80% 場合用 Gamma 即可；遇到特殊需求才動 Claude
 
 *帶走的觀念* ：「工具選擇是 *判斷力* ，不是死記功能列表。今晚教的不是 Claude 也不是 Gamma，是 *『遇到任務時怎麼選工具』* 。」
+
+** Skill
+如果有某一項任務需要你多次來回和AI對話、逐一提供檔案才能完成，而這項任務又是你的例行任務....
+
+SKill: 把某個任務流程化，寫成一個 SOP（Standard Operating Procedure）。你只要寫一次這個 SOP，以後每次遇到同樣的任務，就直接叫 AI 按照這個 SOP 去做就好，不需要再解釋一次流程了。
+
+例如，把「依研究筆記、圖表、論文格式寫小論文」這個流程寫成一個 Skill，叫「小論文初稿生成器」，以後每次要寫小論文，只要說
+#+begin_example
+依研究素材、圖表，寫一篇符合小論文格式的初稿。
+#+end_example
+AI 就會知道要先讀研究筆記、再把圖表嵌進去、最後套上論文格式。
+
+*現場 demo 用* ： [[file:snProposal.zip][snProposal.zip]] —— 「小論文流程」Skill 包，內含 SKILL.md + 小論文範本.docx + 換骨架-prompts.md
+
+**** 方式 A：直接下載 zip
+
+1. 點上方 ~snProposal.zip~ 下載解壓
+2. 把整個 ~snProposal/~ 資料夾上傳到 Claude（Settings → Capabilities → Skills）
+3. 對 Claude 說：「小論文流程，幫我依研究題目、研究素材、圖、論文格式做一份完整的論文＋簡報」
+4. Claude 自動載入 SKILL.md、找內附範本、要求你上傳研究筆記與圖
+5. 一鍵三檔產出：論文.docx + slides.pptx + slides.html
+
+**** 方式 B：讓 Claude 自己生 zip（現場 demo 用）
+
+*目的* ：讓學員親身體驗「叫 Claude 替你打包 Skill」。把以下 prompt 整段貼進 web Claude 對話框，它會自動下載、打包、給你下載連結：
+
+#+begin_example
+請幫我做這件事：
+
+一、從以下三個 GitHub 連結下載檔案，放到一個叫 snProposal/ 的資料夾裡：
+  1. https://raw.githubusercontent.com/letranger/2026-05-14-matsu-ai-workshop/main/snProposal/SKILL.md
+  2. https://raw.githubusercontent.com/letranger/2026-05-14-matsu-ai-workshop/main/snProposal/小論文範本.docx
+  3. https://raw.githubusercontent.com/letranger/2026-05-14-matsu-ai-workshop/main/snProposal/換骨架-prompts.md
+
+二、把整個 snProposal/ 資料夾用 Python zipfile 打包成 snProposal.zip
+    要點：UTF-8 旗標需自動設定（Python zipfile 預設會處理），讓 Windows
+    預設解壓器能正常顯示中文檔名。
+
+三、把 snProposal.zip 給我下載。
+#+end_example
+
+拿到 zip 後的安裝動作跟方式 A 一樣：解壓 → 上傳到 Settings → Skills。
+
+*注意* ：需 Claude Pro 才能用 Custom Skill；免費版可以「複製 SKILL.md 內容貼進對話」當 system prompt，效果接近但每次都要貼一遍。
 
 * 實作二 (L3-L4)：模型、代理人與你
 
