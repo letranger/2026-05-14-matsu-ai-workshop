@@ -159,11 +159,11 @@
 
 | 步驟  | 工具                | 在做什麼                                | 產出                    |
 |-------+---------------------+-----------------------------------------+-------------------------|
-| 1 讀  | NotebookLM          | 馬祖在地素材 → 研究筆記＋參考文獻       | ~research_notes.docx~   |
+| 1 讀  | NotebookLM          | 馬祖在地素材 → 研究筆記＋參考文獻       | 研究筆記(docx)
 | 2 畫  | Napkin × 2          | 因果關係圖＋時間軸                      | 兩張 PNG                |
-| 3 寫  | Claude              | 用筆記＋圖 → 小論文初稿（含內嵌圖）     | ~paper_draft.docx~      |
-| 4 變  | Claude              | 同一份內容換骨架——*教案／心得／報告*    | ~report_variant.docx~   |
-| 5 報  | Claude vs Gamma     | 同一份做投影片， *兩工具對比*           | ~slides.html~ + ~.pptx~ |
+| 3 寫  | Claude              | 用筆記＋圖 → 小論文初稿（含內嵌圖）     | 小論文(docx)
+| 4 變  | Claude              | 同一份內容換骨架——*教案／心得／報告*    | 教案(docx)
+| 5 報  | Claude vs Gamma     | 同一份做投影片， *兩工具對比*           | 簡報（HTML / PPTX） |
 
 跑完手上有：研究筆記＋兩張圖＋小論文＋骨架變體＋兩種投影片。
 
@@ -258,11 +258,11 @@
 3. 以Google文件開啟，確認格式（標題、段落、引用）沒亂掉
 4. 讀一遍，刪錯的
 5. 核對出處編號（NotebookLM 會錯亂）
-6. 下載成Word檔，準備餵給 Napkin 和 Claude   
+6. 下載成Word檔(馬祖藍眼淚研究筆記.docx)，準備餵給 Napkin 和 Claude   
 
 *** NotebookLM 的幻覺測試（RAG 系統）
 
-把同一題丟給已上傳 5 份馬祖素材的 NotebookLM
+把同一題丟給已上傳 5 份馬祖文獻的 NotebookLM
 
 #+begin_example
 我手邊有蔣國平教授 2025 年發表在 Frontiers in Marine Science 的論文，關於「夜光蟲爆發週期與閩江口營養鹽輸入」，但我把 PDF 弄丟了。請依該篇的研究方法與結論，幫我重建：完整論文題名（中英）／三位作者全名／摘要全文（約 250 字）／主要結論四點／結論段最後一句。
@@ -296,11 +296,10 @@
 3. 讓 Claude 拿官方範本當「填空骨架」，把素材組成完整論文。
 
 *Claude 上傳* （一次給齊四個附件）：
-1. ~research_notes.docx~ — Step 1 NotebookLM 產出的研究筆記
-2. ~因果圖.png~ — Step 2 Napkin 產出
-3. ~時間軸.png~ — Step 2 Napkin 產出
-4. [[file:小論文範本.docx][~小論文範本.docx~]] — 全國高中小論文寫作比賽官方範本
-   （台北市開南高商提供，內含格式規則＋封面頁＋章節範例＋引註寫法）
+1. 馬祖藍眼淚研究筆記.docx — Step 1 NotebookLM 產出的研究筆記
+2. 因果圖.png — Step 2 Napkin 產出
+3. 時間軸.png — Step 2 Napkin 產出
+4. [[file:小論文範本.docx][小論文範本.docx]] — 全國高中小論文寫作比賽官方範本（內含格式規則＋封面頁＋章節範例＋引註寫法）
 
 *餵給 Claude 的 prompt* ：
 
@@ -323,7 +322,7 @@
 4. 「肆、引註資料」段沿用研究筆記中的來源，依範本示範的書寫格式（圖書／期刊／博碩士論文）撰寫
 
 【內容要求】
-1. 內容只能用 research_notes.docx 裡的素材—— *不要新增筆記裡沒有的事實或數據*
+1. 內容只能用 馬祖藍眼淚研究筆記.docx 裡的素材—— *不要新增筆記裡沒有的事實或數據*
 2. 全文以繁體中文撰寫（半形數字、英文用 Times New Roman）
 3. 字數：前言 200–500 字／正文 1200–3000 字／結論 200–500 字
 4. 輸出為 .docx 檔案，保留範本的字型與段落樣式
@@ -336,7 +335,7 @@
 
 ** Step 4：同一份內容，換骨架
 
-*** 流程的可塑性:
+*** 流程的可塑性：
 
 | 變體 | 用途       | 樣板說明                                  |
 |------+------------+-------------------------------------------|
@@ -350,9 +349,9 @@
 #+begin_example
 我上傳了兩個附件：
 
-附件 1（內容來源）：小論文
+附件 1（內容來源）：馬祖藍眼淚研究素材.docx
 
-附件 2（目標格式）：教案範本-橋頭糖廠版.docx
+附件 2（目標格式）：教案格式.docx
 
 請依【附件 2 的格式】把【附件 1 的內容】轉換成一份高中跨領域教案。
 
@@ -361,8 +360,8 @@
 #+end_example
 
 *附件對應檔案* ：
-1. ~paper_draft.docx~ — Step 3 產出的小論文
-2. [[file:教案範本-橋頭糖廠版.docx][~教案範本-橋頭糖廠版.docx~]] — 高雄場驗證教案
+1. [[file:馬祖藍眼淚的成因之爭_小論文.docx][馬祖藍眼淚的成因之爭_小論文.docx]] — Step 3 產出的小論文
+2. [[file:教案格式.docx][教案格式.docx]] — 高雄場驗證教案
 
 ** Step 5：Claude vs Gamma —— 同一份內容、兩種簡報
 同一份內容的兩種不同版本投影片： *工程師思維*  vs *設計師思維* 的差異
@@ -370,7 +369,7 @@
 *** 路徑 A：Claude artifact 直接生成 HTML 投影片
 
 #+begin_example
-請依附件「paper_draft.docx」這份小論文，產出一份 reveal.js 風格的
+請依附件「馬祖藍眼淚的成因之爭_小論文.docx」這份小論文，產出一份 reveal.js 風格的
 HTML 投影片，10 張內。
 
 格式：
@@ -379,7 +378,7 @@ HTML 投影片，10 張內。
 - 第 3-5 張：文獻探討重點
 - 第 6-8 張：研究發現（嵌入因果圖、時間軸）
 - 第 9 張：結論
-- 第 10 張：Q&A
+- 第 10 張：Q林 &A
 
 風格：深色背景、學術簡潔、無花俏動畫
 輸出 .html 單檔（含 inline CSS/JS），可在瀏覽器直接開啟
@@ -428,11 +427,14 @@ SKill: 把某個任務流程化，寫成一個 SOP（Standard Operating Procedur
 #+end_example
 AI 就會知道要先讀研究筆記、再把圖表嵌進去、最後套上論文格式。
 
-*現場 demo prompt* ——學員在剛跑完論文＋兩種投影片那一輪後， *緊接著* 把這段貼給 Claude：
+*** DEMO
+1. 下載完整版的[[file:snProposal.zip][snProposal.zip]](內含 SKILL.md + 小論文範本.docx + 換骨架-prompts.md)
+2. 上傳至claude
+3. 上傳研究素材+兩張圖(虎尾糖廠)
 
+*** 如何生成skill
 #+begin_example
-我們剛才上傳了研究素材、兩張圖、小論文格式，依格式生成了小論文，
-最後生成兩種投影片（.pptx 和 .html）。
+我們剛才上傳了研究素材、兩張圖、小論文格式，依格式生成了小論文，最後生成兩種投影片（.pptx 和 .html）。
 
 請把這整個流程打包成一個 Claude Skill 讓我下載：
 
@@ -440,12 +442,12 @@ AI 就會知道要先讀研究筆記、再把圖表嵌進去、最後套上論�
 2. 把我剛才用的小論文範本 docx 一起包進去
 3. 整個壓成 snProposal.zip 給我下載
 
-下次我說「小論文流程」，你就能依這個 Skill 重跑同樣的流程，
-不必再解釋一遍。
+下次我說「小論文流程」，你就能依這個 Skill 重跑同樣的流程，不必再解釋一遍。
 #+end_example
 
 Claude 會 *從這次對話歷史抽出流程* ，自己寫 SKILL.md、打包成 zip 給學員下載。
 
+** for me :noexport:
 *教學意圖* ：讓學員親身體驗「我描述剛做過的事 → AI 把它記成 SOP」這個動作。
 這正是 Skill 的核心精神——*你做過一次、AI 替你記下來、下次直接呼叫* 。
 
@@ -463,7 +465,7 @@ Claude 會 *從這次對話歷史抽出流程* ，自己寫 SKILL.md、打包成
 
 *接續 L1–L2，這段把 AI 推到 L3（自己動手做）和 L4（你訂規則它一直做）。*
 
-** Section 1：Lv.3——Gemini CLI 把 AI 拉出瀏覽器
+** L3——把 AI 拉出瀏覽器
 
 Why Gemini CLI
 - 免費 Claude 沒 CLI、Gemini CLI 免費可用——這是是最主要的原因，如果你有訂閱Claude，本日全場的工作流程都可以在Claude CLI裡完成
@@ -476,7 +478,7 @@ Why Gemini CLI
 5. 先和他聊聊天
 6. 離開Gemini: 輸入 /exit 或按兩次 Ctrl+C
 
-*** TRY: 整理資料夾  
+*** 實作1: 整理資料夾  
 1. [[file:test-cleanup.zip][下載這個測試檔案]]
 2. 解壓縮到桌面(資料夾名稱 test-cleanup)，裡面有一堆亂七八糟的檔案（PDF、圖片、文件、簡報⋯⋯）
 3. 打開終端機，輸入cd (後面接一個空格)
@@ -492,7 +494,7 @@ Why Gemini CLI
 
 90 秒後，桌面乾淨。
 
-*** 改考卷、計分
+*** 實作2：改考卷、計分
 - [[file:學生考卷.zip][按這裡下載學生考卷測試檔]]
 - 開一個新的 Gemini CLI，cd 到解壓縮後的資料夾
 - 輸入prompt:
@@ -529,28 +531,12 @@ Why Gemini CLI
   4. 跑完印出班級平均與哪幾題答對率最低（小於 50%）
 #+end_example
 
-*** 這個Section的重點
+*** 重點
 - 不在於整理資料夾或改考卷
 - 重點是「AI 可以直接操作你的電腦，幫你完成任務」——這是 Lv.3 的核心價值
 - 限制AI能力的，是你的想像力，不是技術本身。 *你想得到的流程，都能讓 AI 幫你做。*
 
-
-
-** Section 3：風險與隱私
-*** AI的能力越大，你冒的風險越大、你的責任越大
-- [[https://more-news.tw/564184/][AI代理失控誤刪工程師資料庫 揭示開發領域潛在風險]]
-- [[https://www.ithome.com.tw/news/175391][AI代理人9秒刪掉新創公司的資料庫及備份]]
-- [[https://tw.news.yahoo.com/claude-code-%E9%97%96%E7%A6%8D%E5%88%AA%E5%85%89%E8%B3%87%E6%96%99%E5%BA%AB%EF%BC%81%E9%96%8B%E7%99%BC%E8%80%85%E8%AA%A4%E4%BA%A4-terraform-%E6%AC%8A%E9%99%90%EF%BC%8C%E5%85%A9%E5%B9%B4%E5%8D%8A%E7%A9%8D%E7%B4%AF%E4%B8%80%E5%A4%9C%E6%B6%88%E5%A4%B1-120154399.html][Claude Code 闖禍刪光資料庫！開發者誤交 Terraform 權限，兩年半積累一夜消失]]
-*** AI不一定會幫你保密
-- [[https://cn.nytimes.com/opinion/20251112/chatbot-conversations-legal-protection/zh-hant/][你告訴AI機器人一個「犯罪祕密」，你會被逮捕嗎？]]
-- [[https://tw.news.yahoo.com/%E5%88%A5%E4%BB%A5%E7%82%BAai%E8%83%BD%E4%BF%9D%E5%AF%86-%E7%BE%8E%E6%B3%95%E9%99%A2%E8%AA%8D%E5%AE%9A-%E5%B0%8D%E8%A9%B1%E8%A8%98%E9%8C%84%E5%8F%AF%E7%94%A8%E4%BD%9C%E6%B3%95%E5%BE%8B%E8%AD%89%E6%93%9A-040032960.html][別以為AI能保密！美法院認定 對話記錄可用作法律證據]]
-- [[https://www.techbang.com/posts/128891-ai-confidant-evidence][別再把 AI 當樹洞！前 CEO 慘痛教訓：與 Claude 對話全被法官要求交出]]
-*** 什麼東西不該丟雲端？
-- 「這段如果被截圖貼到網路上，我會崩潰嗎？」
-
-** Section 4：L4 的一些 DEMO
-
-*** L4 的關鍵不是「AI 替你做一次」，是「AI 替你 *一直* 做」。* 你不在電腦前、不下指令，AI 還在背景跑。
+** L4 DEMO
 
 *** Claude Code（指令列代理 + Skill + Hook）
 
@@ -561,12 +547,7 @@ L3 的 Claude Code 是「我下指令、AI 跑一次」；L4 的 Claude Code 是
 - [[https://murderresearch.github.io/Detective-Analysis][推理解剖室（網頁）]]
 - [[https://www.facebook.com/profile.php?id=61572157565480][推理解剖室（Facebook 粉絲頁）]]
 
-| 場景                          | L4 設定                                            |
-|-------------------------------+----------------------------------------------------|
-| 30 份學生段考 PDF → Excel     | 包成 ~批改.skill~ ；下次說「幫我批改」就跑完        |
-| 每週一 8AM 整理本週課程進度    | ~cron~ + Claude Code，自動產生家長通知             |
-| 段考檔案命名亂              1 | ~stop hook~ —— 每次 Claude 跑完自動歸檔            |
-| 多學生作業並行批改            | ~subagent~ —— 一個 Claude 同時派出 5 個子代理人並行 |
+L4 的關鍵不是「AI 替你做一次」，是「AI 替你 *一直* 做」。* 你不在電腦前、不下指令，AI 還在背景跑。
 
 *** OpenClaw（開源 AI 代理工作隊）
 
@@ -583,20 +564,12 @@ L3 的 Claude Code 是「我下指令、AI 跑一次」；L4 的 Claude Code 是
 | 圖書館新書通報                      | 每月自動到博客來、誠品抓教師相關書籍清單      |
 | 段考成績發放                        | 自動寄個別化成績通知 + 落點分析給每位家長    |
 
-*** 什麼是 Agent
+*** 什麼是 AI Agent
 
 簡化的對比：
 
-- *人 ↔ 模型* ：你跟 AI 對話、AI 給回答。每一輪都靠 *你* 下指令、推進步驟、判斷下一步要問什麼。這是 PART #1 跟 Section 1 的工作模式。
-- *人 ↔ 代理人 ↔ 模型* ：你跟「代理人」講目標，代理人自己決定 *要叫模型做什麼／要不要操作電腦／要不要查網路* 。你只看最終結果。這是 Section 2 的 Gemini CLI、上面 AI Agent 段的例子。
-
-關鍵差別在「誰在規劃步驟」：
-
-| 層級    | 步驟由誰規劃                | 對應今天看到的     |
-|---------+-----------------------------+--------------------|
-| Lv.1-2  | 人（你每一步都要下指令）    | PART #1            |
-| Lv.3-4  | 人預先寫好（prompt 或 Skill），代理人照做 | Section 1（Skill）／ Section 2（Gemini CLI） |
-| Lv.5    | 代理人臨場決定              | 推理解剖室、OpenClaw |
+- *人 ↔ 模型*  ：你跟 AI 對話、AI 給回答。每一輪都靠 *你* 下指令、推進步驟、判斷下一步要問什麼。這是 PART #1 跟 Section 1 的工作模式。
+- *人 ↔ 代理人 ↔ 模型*  ：你跟「代理人」講目標，代理人自己決定 *要叫模型做什麼／要不要操作電腦／要不要查網路*  。你只看最終結果。這是 Section 2 的 Gemini CLI、上面 AI Agent 段的例子。
 
 * 為什麼 AI 能生成文字、影音
 
@@ -767,7 +740,6 @@ AI 看到的不是文字，而是 Token（一小段一小段的碎片）。
 - 再輸入「314159」，數字的切法跟你想的完全不一樣
 - 這就是為什麼 AI 有時候數學會算錯——它看到的不是「數字」，是碎片
 
-
 ** 為什麼會生出幻覺（Hallucination）
 
 *回看開場那道題* ：
@@ -820,6 +792,18 @@ AI 看到的不是文字，而是 Token（一小段一小段的碎片）。
 - 核心觀念：*資料 → 特徵 → 模型 → 預測* ；機器學習的最小心智模型
 - 為什麼這跟 ChatGPT 是同一回事：*都在「猜下一個」*——只是「下一個」的內容不同（字 vs 機率）
 - 這個題目是給對 AI 有興趣的學生：可以實際撰寫程式（Python + scikit-learn），不只是用 AI 工具
+
+* AI的風險與隱私
+** 能力越強，風險越高
+- [[https://more-news.tw/564184/][AI代理失控誤刪工程師資料庫 揭示開發領域潛在風險]]
+- [[https://www.ithome.com.tw/news/175391][AI代理人9秒刪掉新創公司的資料庫及備份]]
+- [[https://tw.news.yahoo.com/claude-code-%E9%97%96%E7%A6%8D%E5%88%AA%E5%85%89%E8%B3%87%E6%96%99%E5%BA%AB%EF%BC%81%E9%96%8B%E7%99%BC%E8%80%85%E8%AA%A4%E4%BA%A4-terraform-%E6%AC%8A%E9%99%90%EF%BC%8C%E5%85%A9%E5%B9%B4%E5%8D%8A%E7%A9%8D%E7%B4%AF%E4%B8%80%E5%A4%9C%E6%B6%88%E5%A4%B1-120154399.html][Claude Code 闖禍刪光資料庫！開發者誤交 Terraform 權限，兩年半積累一夜消失]]
+** AI不一定會幫你保密
+- [[https://cn.nytimes.com/opinion/20251112/chatbot-conversations-legal-protection/zh-hant/][你告訴AI機器人一個「犯罪祕密」，你會被逮捕嗎？]]
+- [[https://tw.news.yahoo.com/%E5%88%A5%E4%BB%A5%E7%82%BAai%E8%83%BD%E4%BF%9D%E5%AF%86-%E7%BE%8E%E6%B3%95%E9%99%A2%E8%AA%8D%E5%AE%9A-%E5%B0%8D%E8%A9%B1%E8%A8%98%E9%8C%84%E5%8F%AF%E7%94%A8%E4%BD%9C%E6%B3%95%E5%BE%8B%E8%AD%89%E6%93%9A-040032960.html][別以為AI能保密！美法院認定 對話記錄可用作法律證據]]
+- [[https://www.techbang.com/posts/128891-ai-confidant-evidence][別再把 AI 當樹洞！前 CEO 慘痛教訓：與 Claude 對話全被法官要求交出]]
+** 什麼東西不該丟雲端？
+- 「這段如果被截圖貼到網路上，我會崩潰嗎？」
 
 * Q&A
 ** 最後打個廣告
