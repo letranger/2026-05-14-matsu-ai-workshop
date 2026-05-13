@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2026-05-13 Wed 16:56 -->
+<!-- 2026-05-13 Wed 17:36 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>從閒聊到動手：不斷進化中的生成式AI</title>
@@ -206,76 +206,64 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org503c336">1. 場次資訊</a></li>
-<li><a href="#org8abcfd8">2. AI 責任轉移四階段模型</a></li>
-<li><a href="#org1adb8c5">3. 研習資訊</a>
+<li><a href="#org6e0e2dc">1. 場次資訊</a></li>
+<li><a href="#orgb9803ce">2. AI 責任轉移四階段模型</a></li>
+<li><a href="#orgb950677">3. 研習資訊</a>
 <ul>
-<li><a href="#org39823a7">3.1. 預期成果</a></li>
-<li><a href="#orgc8bac72">3.2. 使用工具</a></li>
-<li><a href="#org8c03495">3.3. Why NotebookLM</a></li>
+<li><a href="#org6a2b65b">3.1. 預期成果</a></li>
+<li><a href="#org1866071">3.2. 使用工具</a></li>
+<li><a href="#orgc58c206">3.3. Why NotebookLM</a></li>
 </ul>
 </li>
-<li><a href="#org5031f24">4. 實作一 (L1-L2)：召喚你的 AI 工讀生</a>
+<li><a href="#org9e48749">4. 實作一 (L1-L2)：召喚你的 AI 工讀生</a>
 <ul>
-<li><a href="#orga37150a">4.1. 五步流程概覽</a></li>
-<li><a href="#org7d97530">4.2. Step 1：NotebookLM 讀題材＋產出研究筆記</a></li>
-<li><a href="#org808ee3a">4.3. Step 2：Napkin 畫兩張視覺化圖</a></li>
-<li><a href="#org369a7ec">4.4. Step 3：Claude 寫小論文初稿</a></li>
-<li><a href="#org49e739c">4.5. Step 4：同一份研究素材，生成不同成果</a></li>
-<li><a href="#org0d2e6f5">4.6. Step 5：同一份論文、兩種簡報(Claude vs Gamma)</a></li>
-<li><a href="#org955a4f4">4.7. Skill</a></li>
+<li><a href="#org93e586f">4.1. 五步流程概覽</a></li>
+<li><a href="#org20adc9e">4.2. Step 1：NotebookLM 讀題材＋產出研究筆記</a></li>
+<li><a href="#org6172405">4.3. Step 2：Napkin 畫兩張視覺化圖</a></li>
+<li><a href="#orgc2a3be0">4.4. Step 3：Claude 寫小論文初稿</a></li>
+<li><a href="#org62a1190">4.5. Step 4：同一份研究素材，生成不同成果</a></li>
+<li><a href="#org44c0a6b">4.6. Step 5：同一份論文、兩種簡報(Claude vs Gamma)</a></li>
+<li><a href="#orgcef9a80">4.7. Skill</a></li>
 </ul>
 </li>
-<li><a href="#org368da4e">5. 實作二 (L3-L4)：解除AI的封印</a>
+<li><a href="#orgb2a2db3">5. 實作二 (L3-L4)：解除AI的封印</a>
 <ul>
-<li><a href="#org6f16521">5.1. L3——讓AI走出瀏覽器</a></li>
-<li><a href="#orge2a89a7">5.2. L4——無需人力介入的自動化</a></li>
+<li><a href="#orge9e87e7">5.1. L3——讓AI走出瀏覽器</a></li>
+<li><a href="#orgb37a4e2">5.2. L4——無需人力介入的自動化</a></li>
 </ul>
 </li>
-<li><a href="#org7047ae6">6. 為什麼 AI 能生成文字、影音</a>
+<li><a href="#org3336ae8">6. 為什麼 AI 能生成文字、影音</a>
 <ul>
-<li><a href="#orged17d7a">6.1. 關於模型你應該知道的事</a></li>
-<li><a href="#orgbd08290">6.2. AI 到底怎麼辦到的？</a></li>
-<li><a href="#org441f2ac">6.3. 為什麼會生出幻覺（Hallucination）</a></li>
-<li><a href="#org083ea6b">6.4. RAG 如何解決幻覺問題</a></li>
+<li><a href="#orgfcce5e8">6.1. 關於模型你應該知道的事</a></li>
+<li><a href="#org0baccb5">6.2. AI 到底怎麼辦到的？</a></li>
+<li><a href="#orgb6930de">6.3. 為什麼會生出幻覺（Hallucination）</a></li>
+<li><a href="#org71d3730">6.4. RAG 如何解決幻覺問題</a></li>
 </ul>
 </li>
-<li><a href="#orgd2869df">7. AI的風險與隱私問題</a>
+<li><a href="#org7dcb382">7. AI的風險與隱私問題</a>
 <ul>
-<li><a href="#org256387e">7.1. 能力越強，風險越高</a></li>
-<li><a href="#org9ad841b">7.2. AI不一定會幫你保密</a></li>
-<li><a href="#org7a7bbd7">7.3. 什麼東西不該丟雲端？</a></li>
+<li><a href="#org7cb48b3">7.1. 能力越強，風險越高</a></li>
+<li><a href="#org53428e8">7.2. AI不一定會幫你保密</a></li>
+<li><a href="#org6e21ba9">7.3. 什麼東西不該丟雲端？</a></li>
 </ul>
 </li>
-<li><a href="#org2b75880">8. Q&amp;A</a>
+<li><a href="#org03e9381">8. Q&amp;A</a>
 <ul>
-<li><a href="#org8ad7ef1">8.1. 最後打個廣告</a></li>
-<li><a href="#org2bc3410">8.2. Q&amp;A</a></li>
+<li><a href="#orgc96aa22">8.1. 最後打個廣告</a></li>
+<li><a href="#org15acd8a">8.2. Q&amp;A</a></li>
 </ul>
 </li>
-<li><a href="#orgf41d515">9. 下載資源</a>
+<li><a href="#orga44fec8">9. 參考資料</a>
 <ul>
-<li><a href="#org54bd64d">9.1. Step 3 用（小論文）</a></li>
-<li><a href="#org2910dde">9.2. Step 4 用（教案換骨架）</a></li>
-<li><a href="#org6496781">9.3. Step 1 用（NotebookLM）</a></li>
-<li><a href="#orgfa2c108">9.4. 實作二 用（L3／L4 demo）</a></li>
-<li><a href="#org8d9d7da">9.5. 原理段用</a></li>
-<li><a href="#orga4ebbb4">9.6. 範例輸出（學員可參考）</a></li>
-<li><a href="#orgf3fd06e">9.7. Napkin 預生成圖（學員開場示範）</a></li>
-<li><a href="#org4782f5a">9.8. 全套打包</a></li>
-</ul>
-</li>
-<li><a href="#org78deecb">10. 參考資料</a>
-<ul>
-<li><a href="#orgf5e6a94">10.1. 主要教材</a></li>
-<li><a href="#orgfb8288f">10.2. 馬祖在地素材（NotebookLM 用）</a></li>
+<li><a href="#org34ecb0a">9.1. 主要教材</a></li>
+<li><a href="#orgbd2d36d">9.2. 馬祖在地素材（NotebookLM 用）</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org503c336" class="outline-2">
-<h2 id="org503c336"><span class="section-number-2">1.</span> 場次資訊</h2>
+<div id="outline-container-org6e0e2dc" class="outline-2">
+<h2 id="org6e0e2dc"><span class="section-number-2">1.</span> 場次資訊</h2>
 <div class="outline-text-2" id="text-1">
 <ul class="org-ul">
 <li>時間：2026-05-14（四）17:30–20:30（共 3 小時）</li>
@@ -286,8 +274,8 @@
 </ul>
 </div>
 </div>
-<div id="outline-container-org8abcfd8" class="outline-2">
-<h2 id="org8abcfd8"><span class="section-number-2">2.</span> AI 責任轉移四階段模型</h2>
+<div id="outline-container-orgb9803ce" class="outline-2">
+<h2 id="orgb9803ce"><span class="section-number-2">2.</span> AI 責任轉移四階段模型</h2>
 <div class="outline-text-2" id="text-2">
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
@@ -345,12 +333,12 @@
 </p>
 </div>
 </div>
-<div id="outline-container-org1adb8c5" class="outline-2">
-<h2 id="org1adb8c5"><span class="section-number-2">3.</span> 研習資訊</h2>
+<div id="outline-container-orgb950677" class="outline-2">
+<h2 id="orgb950677"><span class="section-number-2">3.</span> 研習資訊</h2>
 <div class="outline-text-2" id="text-3">
 </div>
-<div id="outline-container-org39823a7" class="outline-3">
-<h3 id="org39823a7"><span class="section-number-3">3.1.</span> 預期成果</h3>
+<div id="outline-container-org6a2b65b" class="outline-3">
+<h3 id="org6a2b65b"><span class="section-number-3">3.1.</span> 預期成果</h3>
 <div class="outline-text-3" id="text-3-1">
 <ul class="org-ul">
 <li>實作1 (L1–L2)
@@ -377,8 +365,8 @@
 </ul>
 </div>
 </div>
-<div id="outline-container-orgc8bac72" class="outline-3">
-<h3 id="orgc8bac72"><span class="section-number-3">3.2.</span> 使用工具</h3>
+<div id="outline-container-org1866071" class="outline-3">
+<h3 id="org1866071"><span class="section-number-3">3.2.</span> 使用工具</h3>
 <div class="outline-text-3" id="text-3-2">
 <ol class="org-ol">
 <li><a href="https://notebooklm.google.com">NotebookLM</a></li>
@@ -389,22 +377,22 @@
 </ol>
 </div>
 </div>
-<div id="outline-container-org8c03495" class="outline-3">
-<h3 id="org8c03495"><span class="section-number-3">3.3.</span> Why NotebookLM</h3>
+<div id="outline-container-orgc58c206" class="outline-3">
+<h3 id="orgc58c206"><span class="section-number-3">3.3.</span> Why NotebookLM</h3>
 <div class="outline-text-3" id="text-3-3">
 <ul class="org-ul">
 <li>你慣用的工具，是否曾經跟你回應「我找不到符合的資料」或「我不知道」？</li>
 <li>如果沒有，對於它所生成的任何內容，也許你應該開始抱持著懷疑的精神。</li>
 </ul>
 </div>
-<div id="outline-container-orgf2d1891" class="outline-4">
-<h4 id="orgf2d1891"><span class="section-number-4">3.3.1.</span> 測試 ChatGPT 與 Gemini</h4>
+<div id="outline-container-org0e158b3" class="outline-4">
+<h4 id="org0e158b3"><span class="section-number-4">3.3.1.</span> 測試 ChatGPT 與 Gemini</h4>
 <div class="outline-text-4" id="text-3-3-1">
 <p>
 同一題分別丟給三個工具看反應（藍眼淚相關、含偽前提）：
 </p>
 
-<pre class="example" id="orgb8c5136">
+<pre class="example" id="org3fb2d77">
 我手邊有蔣國平教授 2025 年發表在 Frontiers in Marine Science 的論文，關於「夜光蟲爆發週期與閩江口營養鹽輸入」，但我把 PDF 弄丟了。請依該篇的研究方法與結論，幫我重建：完整論文題名（中英）／三位作者全名／摘要全文（約 250 字）／主要結論四點／結論段最後一句。
 </pre>
 
@@ -415,15 +403,15 @@
 </div>
 </div>
 </div>
-<div id="outline-container-org5031f24" class="outline-2">
-<h2 id="org5031f24"><span class="section-number-2">4.</span> 實作一 (L1-L2)：召喚你的 AI 工讀生</h2>
+<div id="outline-container-org9e48749" class="outline-2">
+<h2 id="org9e48749"><span class="section-number-2">4.</span> 實作一 (L1-L2)：召喚你的 AI 工讀生</h2>
 <div class="outline-text-2" id="text-4">
 <p>
 主題：*藍眼淚與環境生態*
 </p>
 </div>
-<div id="outline-container-orga37150a" class="outline-3">
-<h3 id="orga37150a"><span class="section-number-3">4.1.</span> 五步流程概覽</h3>
+<div id="outline-container-org93e586f" class="outline-3">
+<h3 id="org93e586f"><span class="section-number-3">4.1.</span> 五步流程概覽</h3>
 <div class="outline-text-3" id="text-4-1">
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
@@ -488,12 +476,12 @@
 </p>
 </div>
 </div>
-<div id="outline-container-org7d97530" class="outline-3">
-<h3 id="org7d97530"><span class="section-number-3">4.2.</span> Step 1：NotebookLM 讀題材＋產出研究筆記</h3>
+<div id="outline-container-org20adc9e" class="outline-3">
+<h3 id="org20adc9e"><span class="section-number-3">4.2.</span> Step 1：NotebookLM 讀題材＋產出研究筆記</h3>
 <div class="outline-text-3" id="text-4-2">
 </div>
-<div id="outline-container-orgd929e9e" class="outline-4">
-<h4 id="orgd929e9e"><span class="section-number-4">4.2.1.</span> 訂題</h4>
+<div id="outline-container-org6e26c1c" class="outline-4">
+<h4 id="org6e26c1c"><span class="section-number-4">4.2.1.</span> 訂題</h4>
 <div class="outline-text-4" id="text-4-2-1">
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
@@ -534,8 +522,8 @@
 </table>
 </div>
 </div>
-<div id="outline-container-org19245e1" class="outline-4">
-<h4 id="org19245e1"><span class="section-number-4">4.2.2.</span> 素材</h4>
+<div id="outline-container-org8d214ab" class="outline-4">
+<h4 id="org8d214ab"><span class="section-number-4">4.2.2.</span> 素材</h4>
 <div class="outline-text-4" id="text-4-2-2">
 <ol class="org-ol">
 <li><a href="https://www.sea.matsu.edu.tw/bluetears.html">連江縣海洋教育中心 — 藍眼淚專頁</a></li>
@@ -550,16 +538,16 @@
 </p>
 </div>
 <ol class="org-ol">
-<li><a id="org8a8171f"></a>Google<br />
+<li><a id="orgf2af441"></a>Google<br />
 <div class="outline-text-5" id="text-4-2-2-1">
 <p>
 搜尋「馬祖藍眼淚」
 </p>
 </div>
 </li>
-<li><a id="org4f97367"></a>ChatGPT/Gemini 搜尋「馬祖藍眼淚」<br />
+<li><a id="org1ded7b4"></a>ChatGPT/Gemini 搜尋「馬祖藍眼淚」<br />
 <div class="outline-text-5" id="text-4-2-2-2">
-<pre class="example" id="org2c61cbf">
+<pre class="example" id="org7dc2524">
 我要寫一篇高中生科學小論文，主題是「馬祖藍眼淚的成因之爭——自然現象抑或環境警訊？」。請給我 10 份網路上能找到、可作為參考文獻的素材清單，分三類：
 
 一、學術／權威來源（同行評審論文、政府研究單位、教育部、海洋研究機構的觀測資料）
@@ -570,7 +558,7 @@
 </pre>
 </div>
 </li>
-<li><a id="org55bc6b4"></a>NotebookLM<br />
+<li><a id="org9c9359a"></a>NotebookLM<br />
 <div class="outline-text-5" id="text-4-2-2-3">
 <ul class="org-ul">
 <li>利用NotebokLM內建的「探索」（在網路上搜尋新來源/Discover sources）: 以NotebookLM 搜尋「馬祖藍眼淚」</li>
@@ -580,8 +568,8 @@
 </li>
 </ol>
 </div>
-<div id="outline-container-org0eb12dd" class="outline-4">
-<h4 id="org0eb12dd"><span class="section-number-4">4.2.3.</span> 操作</h4>
+<div id="outline-container-orgf6cb52d" class="outline-4">
+<h4 id="orgf6cb52d"><span class="section-number-4">4.2.3.</span> 操作</h4>
 <div class="outline-text-4" id="text-4-2-3">
 <ol class="org-ol">
 <li>以gmail帳號登入<a href="https://notebooklm.google.com">NotebookLM</a></li>
@@ -592,38 +580,38 @@
 </ol>
 </div>
 <ol class="org-ol">
-<li><a id="orgc5f881e"></a>Q1（引言／背景）<br />
+<li><a id="org7214d60"></a>Q1（引言／背景）<br />
 <div class="outline-text-5" id="text-4-2-3-1">
-<pre class="example" id="orgb266642">
+<pre class="example" id="org34eaf87">
 藍眼淚是什麼？發光機制是什麼？為什麼這個現象值得研究？
 </pre>
 </div>
 </li>
-<li><a id="orgad801f4"></a>Q2（文獻探討）<br />
+<li><a id="org2c1916d"></a>Q2（文獻探討）<br />
 <div class="outline-text-5" id="text-4-2-3-2">
-<pre class="example" id="orgb60ca48">
+<pre class="example" id="orga8a2cc6">
 「自然現象派」與「環境警訊派」的代表研究與論點分別是什麼？
 </pre>
 </div>
 </li>
-<li><a id="org39c8e0a"></a>Q3（討論）<br />
+<li><a id="org1ee838a"></a>Q3（討論）<br />
 <div class="outline-text-5" id="text-4-2-3-3">
-<pre class="example" id="org807aa0e">
+<pre class="example" id="org066850f">
 兩派的證據強度比較？最新研究支持哪一邊？
 </pre>
 </div>
 </li>
-<li><a id="org9ff3211"></a>Q4（結論／建議）<br />
+<li><a id="org1a9330f"></a>Q4（結論／建議）<br />
 <div class="outline-text-5" id="text-4-2-3-4">
-<pre class="example" id="orgc3fa594">
+<pre class="example" id="orgff5a54b">
 這場成因之爭，對馬祖在地觀光與生態保育有什麼意涵？
 高中生後續可延伸的研究方向有哪些？
 </pre>
 </div>
 </li>
-<li><a id="org702c669"></a>Q5（彙整打包）<br />
+<li><a id="orgdd23182"></a>Q5（彙整打包）<br />
 <div class="outline-text-5" id="text-4-2-3-5">
-<pre class="example" id="org0883971">
+<pre class="example" id="org6cddec7">
 請依前面四題的回答，整合成一份完整的「研究筆記」，按以下四節結構輸出（請務必每節都產出，不要省略）：
 
 # 一、論文章節素材
@@ -654,8 +642,8 @@
 </li>
 </ol>
 </div>
-<div id="outline-container-org642f903" class="outline-4">
-<h4 id="org642f903"><span class="section-number-4">4.2.4.</span> 匯出成 Word 檔/人工把關</h4>
+<div id="outline-container-orgf29e58b" class="outline-4">
+<h4 id="orgf29e58b"><span class="section-number-4">4.2.4.</span> 匯出成 Word 檔/人工把關</h4>
 <div class="outline-text-4" id="text-4-2-4">
 <ol class="org-ol">
 <li>在回答下方點「儲存到記事」</li>
@@ -667,21 +655,21 @@
 </ol>
 </div>
 </div>
-<div id="outline-container-orgdbc214e" class="outline-4">
-<h4 id="orgdbc214e"><span class="section-number-4">4.2.5.</span> NotebookLM 的幻覺測試（RAG 系統）</h4>
+<div id="outline-container-orgee8f0e0" class="outline-4">
+<h4 id="orgee8f0e0"><span class="section-number-4">4.2.5.</span> NotebookLM 的幻覺測試（RAG 系統）</h4>
 <div class="outline-text-4" id="text-4-2-5">
 <p>
 把同一題丟給已上傳 5 份馬祖文獻的 NotebookLM
 </p>
 
-<pre class="example" id="orgec0ca2e">
+<pre class="example" id="org4fd2b13">
 我手邊有蔣國平教授 2025 年發表在 Frontiers in Marine Science 的論文，關於「夜光蟲爆發週期與閩江口營養鹽輸入」，但我把 PDF 弄丟了。請依該篇的研究方法與結論，幫我重建：完整論文題名（中英）／三位作者全名／摘要全文（約 250 字）／主要結論四點／結論段最後一句。
 </pre>
 </div>
 </div>
 </div>
-<div id="outline-container-org808ee3a" class="outline-3">
-<h3 id="org808ee3a"><span class="section-number-3">4.3.</span> Step 2：Napkin 畫兩張視覺化圖</h3>
+<div id="outline-container-org6172405" class="outline-3">
+<h3 id="org6172405"><span class="section-number-3">4.3.</span> Step 2：Napkin 畫兩張視覺化圖</h3>
 <div class="outline-text-3" id="text-4-3">
 <ol class="org-ol">
 <li>以gmail帳號登入<a href="https://www.napkin.ai">Napkin</a></li>
@@ -704,8 +692,8 @@
 </ol>
 </div>
 </div>
-<div id="outline-container-org369a7ec" class="outline-3">
-<h3 id="org369a7ec"><span class="section-number-3">4.4.</span> Step 3：Claude 寫小論文初稿</h3>
+<div id="outline-container-orgc2a3be0" class="outline-3">
+<h3 id="orgc2a3be0"><span class="section-number-3">4.4.</span> Step 3：Claude 寫小論文初稿</h3>
 <div class="outline-text-3" id="text-4-4">
 <ol class="org-ol">
 <li>以gmail帳號登入<a href="https://claude.ai">Claude</a></li>
@@ -727,7 +715,7 @@
 <b>餵給 Claude 的 prompt</b> ：
 </p>
 
-<pre class="example" id="org7de2a75">
+<pre class="example" id="orgc5c3953">
 請依附件「小論文範本.docx」的格式與結構，寫一篇高中生小論文：
 
 【主題】馬祖藍眼淚的成因之爭——自然現象抑或環境警訊？
@@ -758,12 +746,12 @@
 </pre>
 </div>
 </div>
-<div id="outline-container-org49e739c" class="outline-3">
-<h3 id="org49e739c"><span class="section-number-3">4.5.</span> Step 4：同一份研究素材，生成不同成果</h3>
+<div id="outline-container-org62a1190" class="outline-3">
+<h3 id="org62a1190"><span class="section-number-3">4.5.</span> Step 4：同一份研究素材，生成不同成果</h3>
 <div class="outline-text-3" id="text-4-5">
 </div>
-<div id="outline-container-org8c7f4d9" class="outline-4">
-<h4 id="org8c7f4d9"><span class="section-number-4">4.5.1.</span> 流程的可塑性：</h4>
+<div id="outline-container-org3a8a33c" class="outline-4">
+<h4 id="org3a8a33c"><span class="section-number-4">4.5.1.</span> 流程的可塑性：</h4>
 <div class="outline-text-4" id="text-4-5-1">
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
@@ -810,9 +798,9 @@
 </table>
 </div>
 <ol class="org-ol">
-<li><a id="org2f2b737"></a>Demo 變體 C 的 prompt ：<br />
+<li><a id="org0bd8075"></a>Demo 變體 C 的 prompt ：<br />
 <div class="outline-text-5" id="text-4-5-1-1">
-<pre class="example" id="org0b10f63">
+<pre class="example" id="orgb76450a">
 我上傳了兩個附件：
 
 附件 1（內容來源）：馬祖藍眼淚研究素材.docx
@@ -837,17 +825,17 @@
 </ol>
 </div>
 </div>
-<div id="outline-container-org0d2e6f5" class="outline-3">
-<h3 id="org0d2e6f5"><span class="section-number-3">4.6.</span> Step 5：同一份論文、兩種簡報(Claude vs Gamma)</h3>
+<div id="outline-container-org44c0a6b" class="outline-3">
+<h3 id="org44c0a6b"><span class="section-number-3">4.6.</span> Step 5：同一份論文、兩種簡報(Claude vs Gamma)</h3>
 <div class="outline-text-3" id="text-4-6">
 <p>
 同一份內容的兩種不同版本投影片： <b>工程師思維</b>  vs <b>設計師思維</b> 的差異
 </p>
 </div>
-<div id="outline-container-org2aad122" class="outline-4">
-<h4 id="org2aad122"><span class="section-number-4">4.6.1.</span> 路徑 A：Claude直接生成投影片</h4>
+<div id="outline-container-orgf8019dc" class="outline-4">
+<h4 id="orgf8019dc"><span class="section-number-4">4.6.1.</span> 路徑 A：Claude直接生成投影片</h4>
 <div class="outline-text-4" id="text-4-6-1">
-<pre class="example" id="org26b8858">
+<pre class="example" id="orgcf845c4">
 請依附件生成一份投影片
 
 - 第 1 張：封面（題目＋作者）
@@ -861,8 +849,8 @@
 </pre>
 </div>
 </div>
-<div id="outline-container-org447bc13" class="outline-4">
-<h4 id="org447bc13"><span class="section-number-4">4.6.2.</span> 路徑 B：Gamma 生成 .pptx</h4>
+<div id="outline-container-org6464855" class="outline-4">
+<h4 id="org6464855"><span class="section-number-4">4.6.2.</span> 路徑 B：Gamma 生成 .pptx</h4>
 <div class="outline-text-4" id="text-4-6-2">
 <p>
 到 <a href="https://gamma.app">Gamma.app</a> ：
@@ -876,8 +864,8 @@
 </div>
 </div>
 </div>
-<div id="outline-container-org955a4f4" class="outline-3">
-<h3 id="org955a4f4"><span class="section-number-3">4.7.</span> Skill</h3>
+<div id="outline-container-orgcef9a80" class="outline-3">
+<h3 id="orgcef9a80"><span class="section-number-3">4.7.</span> Skill</h3>
 <div class="outline-text-3" id="text-4-7">
 <p>
 如果有某一項任務需要你多次來回和AI對話、逐一提供檔案才能完成，而這項任務又是你的例行任務&#x2026;.
@@ -890,15 +878,15 @@ Skill: 把某個任務流程化，寫成一個 SOP（Standard Operating Procedur
 <p>
 例如，把「依研究筆記、圖表、論文格式寫小論文」這個流程寫成一個 Skill，叫「小論文初稿生成器」，以後每次要寫小論文，只要說
 </p>
-<pre class="example" id="org04191bf">
+<pre class="example" id="org34d8f8a">
 依研究素材、圖表，寫一篇符合小論文格式的初稿。
 </pre>
 <p>
 AI 就會知道要先讀研究筆記、再把圖表嵌進去、最後套上論文格式。
 </p>
 </div>
-<div id="outline-container-org561aae1" class="outline-4">
-<h4 id="org561aae1"><span class="section-number-4">4.7.1.</span> DEMO</h4>
+<div id="outline-container-org85d57e6" class="outline-4">
+<h4 id="org85d57e6"><span class="section-number-4">4.7.1.</span> DEMO</h4>
 <div class="outline-text-4" id="text-4-7-1">
 <ol class="org-ol">
 <li>下載完整版的<a href="snProposal.zip">snProposal.zip</a>(內含 SKILL.md + 小論文範本.docx + 換骨架-prompts.md)</li>
@@ -907,10 +895,10 @@ AI 就會知道要先讀研究筆記、再把圖表嵌進去、最後套上論�
 </ol>
 </div>
 </div>
-<div id="outline-container-orgaab621e" class="outline-4">
-<h4 id="orgaab621e"><span class="section-number-4">4.7.2.</span> 如何生成skill</h4>
+<div id="outline-container-org3748012" class="outline-4">
+<h4 id="org3748012"><span class="section-number-4">4.7.2.</span> 如何生成skill</h4>
 <div class="outline-text-4" id="text-4-7-2">
-<pre class="example" id="org6c66ad6">
+<pre class="example" id="orgaab9160">
 我們剛才上傳了研究素材、兩張圖、小論文格式，依格式生成了小論文，最後生成兩種投影片（.pptx 和 .html）。
 
 請把這整個流程打包成一個 Claude Skill 讓我下載：
@@ -929,12 +917,12 @@ Claude 會 <b>從這次對話歷史抽出流程</b> ，自己寫 SKILL.md、打�
 </div>
 </div>
 </div>
-<div id="outline-container-org368da4e" class="outline-2">
-<h2 id="org368da4e"><span class="section-number-2">5.</span> 實作二 (L3-L4)：解除AI的封印</h2>
+<div id="outline-container-orgb2a2db3" class="outline-2">
+<h2 id="orgb2a2db3"><span class="section-number-2">5.</span> 實作二 (L3-L4)：解除AI的封印</h2>
 <div class="outline-text-2" id="text-5">
 </div>
-<div id="outline-container-org6f16521" class="outline-3">
-<h3 id="org6f16521"><span class="section-number-3">5.1.</span> L3——讓AI走出瀏覽器</h3>
+<div id="outline-container-orge9e87e7" class="outline-3">
+<h3 id="orge9e87e7"><span class="section-number-3">5.1.</span> L3——讓AI走出瀏覽器</h3>
 <div class="outline-text-3" id="text-5-1">
 <p>
 Why Gemini CLI
@@ -943,8 +931,8 @@ Why Gemini CLI
 <li>免費 Claude 沒 CLI、Gemini CLI 免費可用——這是是最主要的原因，如果你有訂閱Claude，本日全場的工作流程都可以在Claude CLI裡完成</li>
 </ul>
 </div>
-<div id="outline-container-orgd11dcd2" class="outline-4">
-<h4 id="orgd11dcd2"><span class="section-number-4">5.1.1.</span> 使用方式</h4>
+<div id="outline-container-org46ebf89" class="outline-4">
+<h4 id="org46ebf89"><span class="section-number-4">5.1.1.</span> 使用方式</h4>
 <div class="outline-text-4" id="text-5-1-1">
 <ol class="org-ol">
 <li>開啟終端機（Terminal）</li>
@@ -956,8 +944,8 @@ Why Gemini CLI
 </ol>
 </div>
 </div>
-<div id="outline-container-org100649a" class="outline-4">
-<h4 id="org100649a"><span class="section-number-4">5.1.2.</span> 實作1: 整理資料夾</h4>
+<div id="outline-container-orged8bfa8" class="outline-4">
+<h4 id="orged8bfa8"><span class="section-number-4">5.1.2.</span> 實作1: 整理資料夾</h4>
 <div class="outline-text-4" id="text-5-1-2">
 <ol class="org-ol">
 <li><a href="test-cleanup.zip">下載這個測試檔案</a></li>
@@ -980,15 +968,15 @@ Why Gemini CLI
 </p>
 </div>
 </div>
-<div id="outline-container-org1ab2083" class="outline-4">
-<h4 id="org1ab2083"><span class="section-number-4">5.1.3.</span> 實作2：改考卷、計分</h4>
+<div id="outline-container-org1e49bf1" class="outline-4">
+<h4 id="org1e49bf1"><span class="section-number-4">5.1.3.</span> 實作2：改考卷、計分</h4>
 <div class="outline-text-4" id="text-5-1-3">
 <ul class="org-ul">
 <li><a href="學生考卷.zip">按這裡下載學生考卷測試檔</a></li>
 <li>開一個新的 Gemini CLI，cd 到解壓縮後的資料夾</li>
 <li>輸入prompt:</li>
 </ul>
-<pre class="example" id="org29ebad2">
+<pre class="example" id="org668e6bc">
 這裡面有 30 份學生段考 PDF 考卷。檔名格式是「座號-姓名.pdf」。每份 PDF 第一頁含有：座號、姓名、總分、答對題數，以及 10 題單選題與該生作答（學生選的選項以藍色加粗顯示）。
 
   請幫我做以下事情：
@@ -1022,8 +1010,8 @@ Why Gemini CLI
 </pre>
 </div>
 </div>
-<div id="outline-container-org007d209" class="outline-4">
-<h4 id="org007d209"><span class="section-number-4">5.1.4.</span> 重點</h4>
+<div id="outline-container-orge7114c9" class="outline-4">
+<h4 id="orge7114c9"><span class="section-number-4">5.1.4.</span> 重點</h4>
 <div class="outline-text-4" id="text-5-1-4">
 <ul class="org-ul">
 <li>不在於整理資料夾或改考卷</li>
@@ -1033,12 +1021,12 @@ Why Gemini CLI
 </div>
 </div>
 </div>
-<div id="outline-container-orge2a89a7" class="outline-3">
-<h3 id="orge2a89a7"><span class="section-number-3">5.2.</span> L4——無需人力介入的自動化</h3>
+<div id="outline-container-orgb37a4e2" class="outline-3">
+<h3 id="orgb37a4e2"><span class="section-number-3">5.2.</span> L4——無需人力介入的自動化</h3>
 <div class="outline-text-3" id="text-5-2">
 </div>
-<div id="outline-container-org38d2471" class="outline-4">
-<h4 id="org38d2471"><span class="section-number-4">5.2.1.</span> Claude Code（指令列代理 + Skill + Hook）</h4>
+<div id="outline-container-orgf438b94" class="outline-4">
+<h4 id="orgf438b94"><span class="section-number-4">5.2.1.</span> Claude Code（指令列代理 + Skill + Hook）</h4>
 <div class="outline-text-4" id="text-5-2-1">
 <p>
 L3 的 Claude Code 是「我下指令、AI 跑一次」；L4 的 Claude Code 是 <b>把規則寫死，AI 重複跑</b> 。
@@ -1058,8 +1046,8 @@ L4 的關鍵不是「AI 替你做一次」，是「AI 替你 <b>一直</b> 做�
 </p>
 </div>
 </div>
-<div id="outline-container-org24f49d2" class="outline-4">
-<h4 id="org24f49d2"><span class="section-number-4">5.2.2.</span> OpenClaw（開源 AI 代理工作隊）</h4>
+<div id="outline-container-orgbbbc280" class="outline-4">
+<h4 id="orgbbbc280"><span class="section-number-4">5.2.2.</span> OpenClaw（開源 AI 代理工作隊）</h4>
 <div class="outline-text-4" id="text-5-2-2">
 <p>
 <a href="https://openclaw.ai/">OpenClaw</a> 是 2026 年初竄紅的開源 AI 代理框架（GitHub 100K+ stars）。內建 100+ 個「skills」，可以連到瀏覽器、檔案系統、Email、行事曆、API ⋯⋯。
@@ -1074,8 +1062,8 @@ L4 的關鍵不是「AI 替你做一次」，是「AI 替你 <b>一直</b> 做�
 </ul>
 </div>
 </div>
-<div id="outline-container-org0318f7e" class="outline-4">
-<h4 id="org0318f7e"><span class="section-number-4">5.2.3.</span> 什麼是 AI Agent</h4>
+<div id="outline-container-orge49e230" class="outline-4">
+<h4 id="orge49e230"><span class="section-number-4">5.2.3.</span> 什麼是 AI Agent</h4>
 <div class="outline-text-4" id="text-5-2-3">
 <p>
 簡化的對比：
@@ -1089,23 +1077,23 @@ L4 的關鍵不是「AI 替你做一次」，是「AI 替你 <b>一直</b> 做�
 </div>
 </div>
 </div>
-<div id="outline-container-org7047ae6" class="outline-2">
-<h2 id="org7047ae6"><span class="section-number-2">6.</span> 為什麼 AI 能生成文字、影音</h2>
+<div id="outline-container-org3336ae8" class="outline-2">
+<h2 id="org3336ae8"><span class="section-number-2">6.</span> 為什麼 AI 能生成文字、影音</h2>
 <div class="outline-text-2" id="text-6">
 </div>
-<div id="outline-container-orged17d7a" class="outline-3">
-<h3 id="orged17d7a"><span class="section-number-3">6.1.</span> 關於模型你應該知道的事</h3>
+<div id="outline-container-orgfcce5e8" class="outline-3">
+<h3 id="orgfcce5e8"><span class="section-number-3">6.1.</span> 關於模型你應該知道的事</h3>
 <div class="outline-text-3" id="text-6-1">
 <p>
 不管是ChatGPT、Claude、Gemini，NotebookLM、Napkin、Gamma……背後都是一堆不同的模型在運作。
 </p>
 </div>
-<div id="outline-container-org9358fbe" class="outline-4">
-<h4 id="org9358fbe"><span class="section-number-4">6.1.1.</span> 模型的兩大分類</h4>
+<div id="outline-container-orgc9162bb" class="outline-4">
+<h4 id="orgc9162bb"><span class="section-number-4">6.1.1.</span> 模型的兩大分類</h4>
 <div class="outline-text-4" id="text-6-1-1">
 </div>
 <ol class="org-ol">
-<li><a id="orgb2b9891"></a>商業模型<br />
+<li><a id="orgfd27a6a"></a>商業模型<br />
 <div class="outline-text-5" id="text-6-1-1-1">
 <p>
 <b>由企業訓練、放在自家雲端、按服務收費</b> 。你看不到模型本身，只能透過網頁或 API 用。
@@ -1123,7 +1111,7 @@ L4 的關鍵不是「AI 替你做一次」，是「AI 替你 <b>一直</b> 做�
 </ul>
 </div>
 <ol class="org-ol">
-<li><a id="orgbeddc05"></a>兩種付費模式：訂閱制（ChatGPT Plus、Gemini Pro） vs 按量付費（Claude API）<br />
+<li><a id="org807fe5b"></a>兩種付費模式：訂閱制（ChatGPT Plus、Gemini Pro） vs 按量付費（Claude API）<br />
 <div class="outline-text-6" id="text-6-1-1-1-1">
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
@@ -1167,7 +1155,7 @@ L4 的關鍵不是「AI 替你做一次」，是「AI 替你 <b>一直</b> 做�
 </p>
 </div>
 </li>
-<li><a id="org59bff28"></a>怎麼選模型（以 Anthropic Claude 為例，其他家邏輯類似）：<br />
+<li><a id="org5c00e09"></a>怎麼選模型（以 Anthropic Claude 為例，其他家邏輯類似）：<br />
 <div class="outline-text-6" id="text-6-1-1-1-2">
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
@@ -1219,7 +1207,7 @@ L4 的關鍵不是「AI 替你做一次」，是「AI 替你 <b>一直</b> 做�
 </li>
 </ol>
 </li>
-<li><a id="org3aec286"></a>開源模型<br />
+<li><a id="orgb59ea2b"></a>開源模型<br />
 <div class="outline-text-5" id="text-6-1-1-2">
 <p>
 <b>權重公開可下載，可以放在自己電腦或學校伺服器上跑</b> 。資料完全不外流。
@@ -1237,7 +1225,7 @@ L4 的關鍵不是「AI 替你做一次」，是「AI 替你 <b>一直</b> 做�
 </ul>
 </div>
 <ol class="org-ol">
-<li><a id="org672db5f"></a>優點：<br />
+<li><a id="org42cd604"></a>優點：<br />
 <div class="outline-text-6" id="text-6-1-1-2-1">
 <ul class="org-ul">
 <li><b>資料完全不外流</b> ——學生作文、IEP、考卷、家訪紀錄都可以放</li>
@@ -1247,7 +1235,7 @@ L4 的關鍵不是「AI 替你做一次」，是「AI 替你 <b>一直</b> 做�
 </ul>
 </div>
 </li>
-<li><a id="orgcd9e1c6"></a>缺點：<br />
+<li><a id="org1a918ea"></a>缺點：<br />
 <div class="outline-text-6" id="text-6-1-1-2-2">
 <ul class="org-ul">
 <li><b>能力通常落後商業模型半年到一年</b> （特別是中文、推理、長文）</li>
@@ -1256,7 +1244,7 @@ L4 的關鍵不是「AI 替你做一次」，是「AI 替你 <b>一直</b> 做�
 </ul>
 </div>
 </li>
-<li><a id="orgb0b445c"></a>代價：<br />
+<li><a id="org5558e9c"></a>代價：<br />
 <div class="outline-text-6" id="text-6-1-1-2-3">
 <ol class="org-ol">
 <li>硬體成本（顯卡 GPU、記憶體 32GB+、電費）—— Mac M3/M4 也夠跑 7B-13B 級模型</li>
@@ -1275,18 +1263,18 @@ L4 的關鍵不是「AI 替你做一次」，是「AI 替你 <b>一直</b> 做�
 </ol>
 </div>
 </div>
-<div id="outline-container-orgbd08290" class="outline-3">
-<h3 id="orgbd08290"><span class="section-number-3">6.2.</span> AI 到底怎麼辦到的？</h3>
+<div id="outline-container-org0baccb5" class="outline-3">
+<h3 id="org0baccb5"><span class="section-number-3">6.2.</span> AI 到底怎麼辦到的？</h3>
 <div class="outline-text-3" id="text-6-2">
 </div>
-<div id="outline-container-orga7349c0" class="outline-4">
-<h4 id="orga7349c0"><span class="section-number-4">6.2.1.</span> AI 的本質是「函數」</h4>
+<div id="outline-container-orgf9e8f60" class="outline-4">
+<h4 id="orgf9e8f60"><span class="section-number-4">6.2.1.</span> AI 的本質是「函數」</h4>
 <div class="outline-text-4" id="text-6-2-1">
 <p>
 「你國中學過函數對不對？輸入一個值、經過規則、得到輸出。AI 做的事情一模一樣。」
 </p>
 
-<pre class="example" id="org568db50">
+<pre class="example" id="org55fc36c">
 華氏溫度 = 1.8 × 攝氏溫度 + 32
 </pre>
 
@@ -1298,7 +1286,7 @@ L4 的關鍵不是「AI 替你做一次」，是「AI 替你 <b>一直</b> 做�
 我們可以再舉一個更複雜的函數：學測落點預測。輸入你的學測成績，經過一個複雜的函數，輸出你可能被哪些大學錄取。
 </p>
 
-<div id="orge1338cd" class="figure">
+<div id="orgcaf08bc" class="figure">
 <p><img src="images/2026-04-29_11-28-33.png" alt="2026-04-29_11-28-33.png" width="500px" />
 </p>
 </div>
@@ -1315,14 +1303,14 @@ L4 的關鍵不是「AI 替你做一次」，是「AI 替你 <b>一直</b> 做�
 最後得到的就是你在落點表上看到的錄取機率。當然，實際的學測落點預測函數比這個複雜得多，裡面可能還會考慮你的校系志願、歷年分數分布、甚至是一些非量化的因素，但基本原理是一樣的： <b>輸入 → 函數 → 輸出</b> 。
 </p>
 
-<div id="orgd42cbb7" class="figure">
+<div id="orgd41c3fe" class="figure">
 <p><img src="images/2026-04-29_11-28-16.png" alt="2026-04-29_11-28-16.png" width="500px" />
 </p>
 </div>
 </div>
 </div>
-<div id="outline-container-org5a2c9cc" class="outline-4">
-<h4 id="org5a2c9cc"><span class="section-number-4">6.2.2.</span> 現在，你可以接受AI模型是一個輸入一堆數字、輸出一堆機率的函數了</h4>
+<div id="outline-container-org0f48a82" class="outline-4">
+<h4 id="org0f48a82"><span class="section-number-4">6.2.2.</span> 現在，你可以接受AI模型是一個輸入一堆數字、輸出一堆機率的函數了</h4>
 <div class="outline-text-4" id="text-6-2-2">
 <p>
 那麼&#x2026;. 如果輸入的數字長這樣呢(輸入 28*28 個小數，輸出一堆機率)？
@@ -1333,7 +1321,7 @@ L4 的關鍵不是「AI 替你做一次」，是「AI 替你 <b>一直</b> 做�
 </p>
 
 
-<div id="orgfecc1e5" class="figure">
+<div id="org4a8834e" class="figure">
 <p><img src="images/04-digit5-pixels.png" alt="04-digit5-pixels.png" width="500" />
 </p>
 </div>
@@ -1343,17 +1331,17 @@ L4 的關鍵不是「AI 替你做一次」，是「AI 替你 <b>一直</b> 做�
 </p>
 
 
-<div id="org62a2d74" class="figure">
+<div id="orgf9f96cd" class="figure">
 <p><img src="images/04-digit5-prob.png" alt="04-digit5-prob.png" width="500" />
 </p>
 </div>
 </div>
 </div>
-<div id="outline-container-org96efaa0" class="outline-4">
-<h4 id="org96efaa0"><span class="section-number-4">6.2.3.</span> 如果輸入的數字矩陣再大一點呢？(10*300 個小數，輸出一堆機率)</h4>
+<div id="outline-container-orgd984792" class="outline-4">
+<h4 id="orgd984792"><span class="section-number-4">6.2.3.</span> 如果輸入的數字矩陣再大一點呢？(10*300 個小數，輸出一堆機率)</h4>
 <div class="outline-text-4" id="text-6-2-3">
 
-<div id="org98d339c" class="figure">
+<div id="org8fc2610" class="figure">
 <p><img src="images/2026-04-29_10-04-52.png" alt="2026-04-29_10-04-52.png" width="500" />
 </p>
 </div>
@@ -1363,14 +1351,14 @@ L4 的關鍵不是「AI 替你做一次」，是「AI 替你 <b>一直</b> 做�
 </p>
 </div>
 </div>
-<div id="outline-container-orga59beef" class="outline-4">
-<h4 id="orga59beef"><span class="section-number-4">6.2.4.</span> 生成式 AI 是「會接龍的函數」</h4>
+<div id="outline-container-org83c442f" class="outline-4">
+<h4 id="org83c442f"><span class="section-number-4">6.2.4.</span> 生成式 AI 是「會接龍的函數」</h4>
 <div class="outline-text-4" id="text-6-2-4">
 <p>
 生成式AI: 一個每次只猜下一個字的函數，不斷把自己的輸出接回輸入，像接龍一樣。
 </p>
 
-<div id="orgff317ea" class="figure">
+<div id="orgf853c74" class="figure">
 <p><img src="img/06-blackboard.png" alt="06-blackboard.png" width="650px" />
 </p>
 </div>
@@ -1380,18 +1368,18 @@ L4 的關鍵不是「AI 替你做一次」，是「AI 替你 <b>一直</b> 做�
 </p>
 
 
-<div id="org341437d" class="figure">
+<div id="orgf4750a4" class="figure">
 <p><img src="img/06-prob-step1.png" alt="06-prob-step1.png" width="600px" />
 </p>
 </div>
 
 
-<div id="org73a5872" class="figure">
+<div id="orgf762266" class="figure">
 <p><img src="img/06-prob-step2.png" alt="06-prob-step2.png" width="600px" />
 </p>
 </div>
 
-<pre class="example" id="org572c8be">
+<pre class="example" id="org9a5bbf0">
 f("什麼是臺灣最美的風景？")           → 臺（機率最高）
 f("什麼是臺灣最美的風景？臺")         → 灣
 f("什麼是臺灣最美的風景？臺灣")       → 最
@@ -1408,7 +1396,7 @@ f("什麼是臺灣最美的風景？臺灣最美的風景是") → 人
 但它不是每次都選機率最高的字——像轉輪盤一樣，機率高的字比較容易被選中，但不是一定：
 </p>
 
-<div id="org6c1eea5" class="figure">
+<div id="orgd8b8338" class="figure">
 <p><img src="img/06-roulette.png" alt="06-roulette.png" width="600px" />
 </p>
 </div>
@@ -1476,8 +1464,8 @@ AI 會加入一點隨機性（叫做「溫度參數」），讓回答更多樣�
 </p>
 </div>
 </div>
-<div id="outline-container-org42b49b5" class="outline-4">
-<h4 id="org42b49b5"><span class="section-number-4">6.2.5.</span> Token：AI 眼中的世界</h4>
+<div id="outline-container-org5ff193f" class="outline-4">
+<h4 id="org5ff193f"><span class="section-number-4">6.2.5.</span> Token：AI 眼中的世界</h4>
 <div class="outline-text-4" id="text-6-2-5">
 <p>
 AI 看到的不是文字，而是 Token（一小段一小段的碎片）。
@@ -1494,8 +1482,8 @@ AI 看到的不是文字，而是 Token（一小段一小段的碎片）。
 </div>
 </div>
 </div>
-<div id="outline-container-org441f2ac" class="outline-3">
-<h3 id="org441f2ac"><span class="section-number-3">6.3.</span> 為什麼會生出幻覺（Hallucination）</h3>
+<div id="outline-container-orgb6930de" class="outline-3">
+<h3 id="orgb6930de"><span class="section-number-3">6.3.</span> 為什麼會生出幻覺（Hallucination）</h3>
 <div class="outline-text-3" id="text-6-3">
 <ul class="org-ul">
 <li>模型不是「知道事實」，是「猜下一個最可能的字」（前一段已鋪陳）</li>
@@ -1505,8 +1493,8 @@ AI 看到的不是文字，而是 Token（一小段一小段的碎片）。
 </ul>
 </div>
 </div>
-<div id="outline-container-org083ea6b" class="outline-3">
-<h3 id="org083ea6b"><span class="section-number-3">6.4.</span> RAG 如何解決幻覺問題</h3>
+<div id="outline-container-org71d3730" class="outline-3">
+<h3 id="org71d3730"><span class="section-number-3">6.4.</span> RAG 如何解決幻覺問題</h3>
 <div class="outline-text-3" id="text-6-4">
 <ul class="org-ul">
 <li>一句話：問問題前，先把 <b>你的文件</b> 塞進 prompt</li>
@@ -1532,12 +1520,12 @@ AI 看到的不是文字，而是 Token（一小段一小段的碎片）。
 </div>
 </div>
 </div>
-<div id="outline-container-orgd2869df" class="outline-2">
-<h2 id="orgd2869df"><span class="section-number-2">7.</span> AI的風險與隱私問題</h2>
+<div id="outline-container-org7dcb382" class="outline-2">
+<h2 id="org7dcb382"><span class="section-number-2">7.</span> AI的風險與隱私問題</h2>
 <div class="outline-text-2" id="text-7">
 </div>
-<div id="outline-container-org256387e" class="outline-3">
-<h3 id="org256387e"><span class="section-number-3">7.1.</span> 能力越強，風險越高</h3>
+<div id="outline-container-org7cb48b3" class="outline-3">
+<h3 id="org7cb48b3"><span class="section-number-3">7.1.</span> 能力越強，風險越高</h3>
 <div class="outline-text-3" id="text-7-1">
 <ul class="org-ul">
 <li><a href="https://more-news.tw/564184/">AI代理失控誤刪工程師資料庫 揭示開發領域潛在風險</a></li>
@@ -1546,8 +1534,8 @@ AI 看到的不是文字，而是 Token（一小段一小段的碎片）。
 </ul>
 </div>
 </div>
-<div id="outline-container-org9ad841b" class="outline-3">
-<h3 id="org9ad841b"><span class="section-number-3">7.2.</span> AI不一定會幫你保密</h3>
+<div id="outline-container-org53428e8" class="outline-3">
+<h3 id="org53428e8"><span class="section-number-3">7.2.</span> AI不一定會幫你保密</h3>
 <div class="outline-text-3" id="text-7-2">
 <ul class="org-ul">
 <li><a href="https://cn.nytimes.com/opinion/20251112/chatbot-conversations-legal-protection/zh-hant/">你告訴AI機器人一個「犯罪祕密」，你會被逮捕嗎？</a></li>
@@ -1556,8 +1544,8 @@ AI 看到的不是文字，而是 Token（一小段一小段的碎片）。
 </ul>
 </div>
 </div>
-<div id="outline-container-org7a7bbd7" class="outline-3">
-<h3 id="org7a7bbd7"><span class="section-number-3">7.3.</span> 什麼東西不該丟雲端？</h3>
+<div id="outline-container-org6e21ba9" class="outline-3">
+<h3 id="org6e21ba9"><span class="section-number-3">7.3.</span> 什麼東西不該丟雲端？</h3>
 <div class="outline-text-3" id="text-7-3">
 <ul class="org-ul">
 <li>「這段如果被截圖貼到網路上，我會崩潰嗎？」</li>
@@ -1565,12 +1553,12 @@ AI 看到的不是文字，而是 Token（一小段一小段的碎片）。
 </div>
 </div>
 </div>
-<div id="outline-container-org2b75880" class="outline-2">
-<h2 id="org2b75880"><span class="section-number-2">8.</span> Q&amp;A</h2>
+<div id="outline-container-org03e9381" class="outline-2">
+<h2 id="org03e9381"><span class="section-number-2">8.</span> Q&amp;A</h2>
 <div class="outline-text-2" id="text-8">
 </div>
-<div id="outline-container-org8ad7ef1" class="outline-3">
-<h3 id="org8ad7ef1"><span class="section-number-3">8.1.</span> 最後打個廣告</h3>
+<div id="outline-container-orgc96aa22" class="outline-3">
+<h3 id="orgc96aa22"><span class="section-number-3">8.1.</span> 最後打個廣告</h3>
 <div class="outline-text-3" id="text-8-1">
 <ul class="org-ul">
 <li>《和 AI 做朋友——相知篇：揭秘生成式 AI》教材教案：<a href="https://market.cloud.edu.tw/resources/web/1841948">https://market.cloud.edu.tw/resources/web/1841948</a></li>
@@ -1579,8 +1567,8 @@ AI 看到的不是文字，而是 Token（一小段一小段的碎片）。
 </ul>
 </div>
 </div>
-<div id="outline-container-org2bc3410" class="outline-3">
-<h3 id="org2bc3410"><span class="section-number-3">8.2.</span> Q&amp;A</h3>
+<div id="outline-container-org15acd8a" class="outline-3">
+<h3 id="org15acd8a"><span class="section-number-3">8.2.</span> Q&amp;A</h3>
 <div class="outline-text-3" id="text-8-2">
 <ul class="org-ul">
 <li>一個 Claude Code 試用名額（雲林＋高雄場慣例）</li>
@@ -1588,249 +1576,21 @@ AI 看到的不是文字，而是 Token（一小段一小段的碎片）。
 </div>
 </div>
 </div>
-<div id="outline-container-orgf41d515" class="outline-2">
-<h2 id="orgf41d515"><span class="section-number-2">9.</span> 下載資源</h2>
+<div id="outline-container-orga44fec8" class="outline-2">
+<h2 id="orga44fec8"><span class="section-number-2">9.</span> 參考資料</h2>
 <div class="outline-text-2" id="text-9">
-<p>
-研習當天用得到的所有檔案，點連結直接下載：
-</p>
 </div>
-<div id="outline-container-org54bd64d" class="outline-3">
-<h3 id="org54bd64d"><span class="section-number-3">9.1.</span> Step 3 用（小論文）</h3>
+<div id="outline-container-org34ecb0a" class="outline-3">
+<h3 id="org34ecb0a"><span class="section-number-3">9.1.</span> 主要教材</h3>
 <div class="outline-text-3" id="text-9-1">
-<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
-
-
-<colgroup>
-<col  class="org-left" />
-
-<col  class="org-left" />
-</colgroup>
-<thead>
-<tr>
-<th scope="col" class="org-left">檔案</th>
-<th scope="col" class="org-left">用途</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="org-left"><a href="小論文範本.docx">小論文範本.docx</a></td>
-<td class="org-left">主要範本——上傳給 Claude 當填空骨架</td>
-</tr>
-
-<tr>
-<td class="org-left"><a href="小論文格式說明.pdf">小論文格式說明.pdf</a></td>
-<td class="org-left">全國高中比賽官方規範（備援）</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<div id="outline-container-org2910dde" class="outline-3">
-<h3 id="org2910dde"><span class="section-number-3">9.2.</span> Step 4 用（教案換骨架）</h3>
-<div class="outline-text-3" id="text-9-2">
-<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
-
-
-<colgroup>
-<col  class="org-left" />
-
-<col  class="org-left" />
-</colgroup>
-<thead>
-<tr>
-<th scope="col" class="org-left">檔案</th>
-<th scope="col" class="org-left">用途</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="org-left"><a href="教案範本-橋頭糖廠版.docx">教案範本-橋頭糖廠版.docx</a></td>
-<td class="org-left">高雄場驗證過的教案格式——當目標格式上傳</td>
-</tr>
-
-<tr>
-<td class="org-left"><a href="換骨架-prompts.md">換骨架-prompts.md</a></td>
-<td class="org-left">四種變體 prompt（研習心得／行政報告／教案／科展）</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<div id="outline-container-org6496781" class="outline-3">
-<h3 id="org6496781"><span class="section-number-3">9.3.</span> Step 1 用（NotebookLM）</h3>
-<div class="outline-text-3" id="text-9-3">
-<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
-
-
-<colgroup>
-<col  class="org-left" />
-
-<col  class="org-left" />
-</colgroup>
-<thead>
-<tr>
-<th scope="col" class="org-left">檔案</th>
-<th scope="col" class="org-left">用途</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="org-left"><a href="素材包.md">素材包.md</a></td>
-<td class="org-left">NotebookLM 5 份素材的設置指引</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<div id="outline-container-orgfa2c108" class="outline-3">
-<h3 id="orgfa2c108"><span class="section-number-3">9.4.</span> 實作二 用（L3／L4 demo）</h3>
-<div class="outline-text-3" id="text-9-4">
-<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
-
-
-<colgroup>
-<col  class="org-left" />
-
-<col  class="org-left" />
-</colgroup>
-<thead>
-<tr>
-<th scope="col" class="org-left">檔案</th>
-<th scope="col" class="org-left">用途</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="org-left"><a href="snProposal.zip">snProposal.zip</a></td>
-<td class="org-left">「小論文流程」Skill 包——下載解壓、上傳給 Claude，一句話跑完整套 Step 3</td>
-</tr>
-
-<tr>
-<td class="org-left"><a href="學生考卷-正解.xlsx">學生考卷-正解.xlsx</a></td>
-<td class="org-left">Gemini CLI demo 對照組</td>
-</tr>
-
-<tr>
-<td class="org-left"><a href="學生考卷.zip">學生考卷.zip</a></td>
-<td class="org-left">29 份 demo PDF 打包下載（5.9 MB，UTF-8 旗標，Windows 預設解壓正常）</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<div id="outline-container-org8d9d7da" class="outline-3">
-<h3 id="org8d9d7da"><span class="section-number-3">9.5.</span> 原理段用</h3>
-<div class="outline-text-3" id="text-9-5">
-<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
-
-
-<colgroup>
-<col  class="org-left" />
-
-<col  class="org-left" />
-</colgroup>
-<thead>
-<tr>
-<th scope="col" class="org-left">檔案</th>
-<th scope="col" class="org-left">用途</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="org-left"><a href="RAG-flow-diagram.md">RAG-flow-diagram.md</a></td>
-<td class="org-left">RAG 流程示意圖 4 版本（純流程／對比／Mermaid）</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<div id="outline-container-orga4ebbb4" class="outline-3">
-<h3 id="orga4ebbb4"><span class="section-number-3">9.6.</span> 範例輸出（學員可參考）</h3>
-<div class="outline-text-3" id="text-9-6">
-<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
-
-
-<colgroup>
-<col  class="org-left" />
-
-<col  class="org-left" />
-</colgroup>
-<thead>
-<tr>
-<th scope="col" class="org-left">檔案</th>
-<th scope="col" class="org-left">用途</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="org-left"><a href="examples/研究筆記-範例.md">examples ／ 研究筆記-範例.md</a></td>
-<td class="org-left">Step 1 NotebookLM 應產出長這樣</td>
-</tr>
-
-<tr>
-<td class="org-left"><a href="examples/小論文-範例.md">examples ／ 小論文-範例.md</a></td>
-<td class="org-left">Step 3 Claude 應產出長這樣（≈ 2300 字）</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<div id="outline-container-orgf3fd06e" class="outline-3">
-<h3 id="orgf3fd06e"><span class="section-number-3">9.7.</span> Napkin 預生成圖（學員開場示範）</h3>
-<div class="outline-text-3" id="text-9-7">
-<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
-
-
-<colgroup>
-<col  class="org-left" />
-</colgroup>
-<thead>
-<tr>
-<th scope="col" class="org-left">檔案</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="org-left"><a href="藍眼淚成因因果關係圖 - visual selection.png">藍眼淚成因因果關係圖.png</a></td>
-</tr>
-
-<tr>
-<td class="org-left"><a href="藍眼淚研究／觀光時間軸 - visual selection.png">藍眼淚研究／觀光時間軸.png</a></td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<div id="outline-container-org4782f5a" class="outline-3">
-<h3 id="org4782f5a"><span class="section-number-3">9.8.</span> 全套打包</h3>
-<div class="outline-text-3" id="text-9-8">
-<p>
-整份 repo 一次抓：
-</p>
-
-<ul class="org-ul">
-<li><a href="https://github.com/letranger/2026-05-14-matsu-ai-workshop/archive/refs/heads/main.zip">Download ZIP</a></li>
-<li>或 <code>git clone https://github.com/letranger/2026-05-14-matsu-ai-workshop.git</code></li>
-</ul>
-</div>
-</div>
-</div>
-<div id="outline-container-org78deecb" class="outline-2">
-<h2 id="org78deecb"><span class="section-number-2">10.</span> 參考資料</h2>
-<div class="outline-text-2" id="text-10">
-</div>
-<div id="outline-container-orgf5e6a94" class="outline-3">
-<h3 id="orgf5e6a94"><span class="section-number-3">10.1.</span> 主要教材</h3>
-<div class="outline-text-3" id="text-10-1">
 <ul class="org-ul">
 <li><a href="https://market.cloud.edu.tw/list/ai.jsp">和AI做朋友系列書籍</a></li>
 </ul>
 </div>
 </div>
-<div id="outline-container-orgfb8288f" class="outline-3">
-<h3 id="orgfb8288f"><span class="section-number-3">10.2.</span> 馬祖在地素材（NotebookLM 用）</h3>
-<div class="outline-text-3" id="text-10-2">
+<div id="outline-container-orgbd2d36d" class="outline-3">
+<h3 id="orgbd2d36d"><span class="section-number-3">9.2.</span> 馬祖在地素材（NotebookLM 用）</h3>
+<div class="outline-text-3" id="text-9-2">
 <ul class="org-ul">
 <li><a href="https://www.sea.matsu.edu.tw/bluetears.html">連江縣戶外教育及海洋教育中心 — 藍眼淚專頁</a></li>
 <li><a href="https://www.natgeomedia.com/environment/article/content-4757.html">國家地理 — 解開馬祖藍眼淚之謎（夜光蟲）</a></li>
@@ -1846,7 +1606,7 @@ AI 看到的不是文字，而是 Token（一小段一小段的碎片）。
 <div id="postamble" class="status">
 <p class="date">Date: 2026-05-14</p>
 <p class="author">Author: 顏永進（臺南一中）</p>
-<p class="date">Created: 2026-05-13 Wed 16:56</p>
+<p class="date">Created: 2026-05-13 Wed 17:36</p>
 </div>
 </body>
 </html>
