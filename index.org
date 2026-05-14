@@ -458,9 +458,25 @@ Claude 會 *從這次對話歷史抽出流程* ，自己寫 SKILL.md、打包成
 * 實作二 (L3-L4)：解除AI的封印
 
 ** L3——讓AI走出瀏覽器
-
 Why Gemini CLI
 - 免費 Claude 沒 CLI、Gemini CLI 免費可用——這是是最主要的原因，如果你有訂閱Claude，本日全場的工作流程都可以在Claude CLI裡完成
+  
+*** 安裝gemini cli
+**** 步驟 1：
+右鍵點開「PowerShell」→ 「以系統管理員身分執行」
+**** 步驟 2：複製貼上、Enter：
+#+begin_src shell -r -n :results output :exports both
+winget install OpenJS.NodeJS.LTS --silent --accept-source-agreements --accept-package-agreements
+#+end_src
+**** 步驟 3：
+⚠️ 關掉 PowerShell，重新開一個（必做！讓 PATH 生效）
+**** 步驟 4：
+複製貼上、Enter：
+#+begin_src shell -r -n :results output :exports both
+npx @google/gemini-cli@latest
+#+end_src
+- 看到 gemini 互動介面就成功了
+- 第一次跑會要求你 Google 登入，跟著走
   
 *** 使用方式
 1. 開啟終端機（Terminal）
@@ -811,7 +827,7 @@ AI 看到的不是文字，而是 Token（一小段一小段的碎片）。
 - [ ] 倫理段「什麼不該丟雲端」要不要拿一兩個馬高在地例子（學生作文、家訪紀錄）
 - [ ] FB「馬祖藍眼淚即時通」開場截圖要事先取得（注意社團隱私，可能要請主辦聯繫管理員）
 
-* 下載資源
+* 下載資源 :noexport:
 
 研習當天用得到的所有檔案，點連結直接下載：
 
